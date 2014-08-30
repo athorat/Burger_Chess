@@ -1,0 +1,171 @@
+ <html>
+<head>
+<title>Chess Board Game</title>
+<link rel="stylesheet" type="text/css" href="chess.css">
+</head>
+<body>
+<div id="chessboard">
+
+    <div>
+	    <div class="empty_square" id="Z1"></div>
+		<div class="empty_square" id="Z2"></div>
+	    <div class="empty_square" id="Z3"></div>
+		<div class="empty_square" id="Z4"></div>
+		<div class="empty_square" id="Z5"></div>
+		<div class="empty_square" id="Z6"></div>
+		<div class="empty_square" id="Z7"></div>
+		<div class="empty_square" id="Z8"></div>
+		<div class="empty_square" id="Z9"></div>
+		<div class="empty_square" id="Z10"></div>
+	</div>
+	
+	<div>
+	    <div class="empty_square" id="Y1"></div>
+		<div class="empty_square" id="Y2"></div>
+	    <div class="empty_square" id="Y3"></div>
+		<div class="empty_square" id="Y4"></div>
+		<div class="empty_square" id="Y5"></div>
+		<div class="empty_square" id="Y6"></div>
+		<div class="empty_square" id="Y7"></div>
+		<div class="empty_square" id="Y8"></div>
+		<div class="empty_square" id="Y9"></div>
+		<div class="empty_square" id="Y10"></div>
+	</div>
+
+
+	<div>
+	    <div class="empty_square" id="X1"></div>
+		<div class="black_square" id="A1"></div>
+	    <div class="white_square" id="A2" align="center">
+		</div>
+		<div class="black_square" id="A3" align="center">
+		</div>
+		<div class="white_square" id="A4" align="center">
+		</div>
+		<div class="black_square" id="A5" align="center">
+		</div>
+		<div class="white_square" id="A6" align="center">
+		</div>
+		<div class="black_square" id="A7" align="center">
+		</div>
+		<div class="white_square" id="A8" align="center">
+		</div>
+		<div class="empty_square" id="X2"  align="center">
+		</div>
+	</div>
+	<div>
+		<div class="empty_square" id="W1"></div>
+		<div class="white_square" id="B1"></div>
+		<div class="black_square" id="B2"align="center"></div>
+		<div class="white_square" id="B3"align="center"></div>
+		<div class="black_square" id="B4" align="center"></div>
+		<div class="white_square" id="B5" align="center"></div>
+		<div class="black_square" id="B6" align="center"></div>
+		<div class="white_square" id="B7" align="center"></div>
+		<div class="black_square" id="B8" align="center"></div>
+		<div class="empty_square" id="W2" align="center"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="V1"></div>
+		<div class="black_square" id="C1"></div>
+		<div class="white_square" id="C2"></div>
+		<div class="black_square" id="C3"></div>
+		<div class="white_square" id="C4"></div>
+		<div class="black_square" id="C5"></div>
+		<div class="white_square" id="C6"></div>
+		<div class="black_square" id="C7"></div>
+		<div class="white_square" id="C8"></div>
+		<div class="empty_square" id="V2"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="U1"></div>
+		<div class="white_square" id="D1"></div>
+		<div class="black_square" id="D2"></div>
+		<div class="white_square" id="D3"></div>
+		<div class="black_square" id="D4"></div>
+		<div class="white_square" id="D5"></div>
+		<div class="black_square" id="D6"></div>
+		<div class="white_square" id="D7"></div>
+		<div class="black_square" id="D8"></div>
+		<div class="empty_square" id="U2"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="T1"></div>
+		<div class="black_square" id="E1"></div>
+		<div class="white_square" id="E2"></div>
+		<div class="black_square" id="E3"></div>
+		<div class="white_square" id="E4"></div>
+		<div class="black_square" id="E5"></div>
+		<div class="white_square" id="E6"></div>
+		<div class="black_square" id="E7"></div>
+		<div class="white_square" id="E8"></div>
+		<div class="empty_square" id="T2"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="S1"></div>
+		<div class="white_square" id="F1"></div>
+		<div class="black_square" id="F2"></div>
+		<div class="white_square" id="F3"></div>
+		<div class="black_square" id="F4"></div>
+		<div class="white_square" id="F5"></div>
+		<div class="black_square" id="F6"></div>
+		<div class="white_square" id="F7"></div>
+		<div class="black_square" id="F8"></div>
+		<div class="empty_square" id="S2"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="R1"></div>
+		<div class="black_square" id="G1"></div>
+		<div class="white_square" id="G2" align="center"></div>
+		<div class="black_square" id="G3" align="center"></div>
+		<div class="white_square" id="G4" align="center"></div>
+		<div class="black_square" id="G5" align="center"></div>
+		<div class="white_square" id="G6" align="center"></div>
+		<div class="black_square" id="G7" align="center"></div>
+		<div class="white_square" id="G8" align="center"></div>
+		<div class="empty_square" id="R2" align="center"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="Q1"></div>
+		<div class="white_square" id="H1"></div>
+		<div class="black_square" id="H2" align="center"></div>
+		<div class="white_square" id="H3" align="center"></div>
+		<div class="black_square" id="H4"  align="center"></div>
+		<div class="white_square" id="H5" align="center"></div>
+		<div class="black_square" id="H6" align="center"></div>
+		<div class="white_square" id="H7" align="center"></div>
+		<div class="black_square" id="H8" align="center"></div>
+		<div class="empty_square" id="Q2" align="center"></div>
+		
+		
+	</div>
+	
+	 <div>
+	    <div class="empty_square" id="P1"></div>
+		<div class="empty_square" id="P2"></div>
+	    <div class="empty_square" id="P3"></div>
+		<div class="empty_square" id="P4"></div>
+		<div class="empty_square" id="P5"></div>
+		<div class="empty_square" id="P6"></div>
+		<div class="empty_square" id="P7"></div>
+		<div class="empty_square" id="P8"></div>
+		<div class="empty_square" id="P9"></div>
+		<div class="empty_square" id="P10"></div></div>
+	</div>
+	
+	<div>
+	   <div class="empty_square" id="O1"></div>
+		<div class="empty_square" id="O2"></div>
+	    <div class="empty_square" id="O3"></div>
+		<div class="empty_square" id="O4"></div>
+		<div class="empty_square" id="O5"></div>
+		<div class="empty_square" id="O6"></div>
+		<div class="empty_square" id="O7"></div>
+		<div class="empty_square" id="O8"></div>
+		<div class="empty_square" id="O9"></div>
+		<div class="empty_square" id="O10"></div>
+	</div>
+	
+</div>
+</body>
+</html>
