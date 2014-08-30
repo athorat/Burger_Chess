@@ -1,0 +1,16 @@
+.darkcell
+{
+width:80px;
+height:80px;
+background-color:grey;
+float:left;
+}
+.whitecell
+{
+width:80px;
+height:80px;
+background-color:white;
+float:left;
+
+border:2px solid grey;
+}
