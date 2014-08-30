@@ -11,6 +11,35 @@
 	border:4px solid #000000;
 
 }
+#start_btn {
+
+}
+#pawn_black {
+	visibility:hidden;
+}
+
+#rook_black{
+ visibility:hidden;
+}
+
+#knight_black{
+ visibility:hidden;
+}
+
+#bishop_black{
+ visibility:hidden;
+ 
+}#king_black{
+ visibility:hidden;
+}
+
+#rook_black{
+ visibility:hidden;
+}
+
+#queen_black{
+	visibility:hidden;
+}
 
 .black_square, .white_square , .check_square, .empty_square{
 	width:50px;
