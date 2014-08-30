@@ -2,218 +2,179 @@
 <head>
 <title>Chess Board Game</title>
 <link rel="stylesheet" type="text/css" href="chess.css">
-<<<<<<< HEAD
-<script type="text/javascript" src="chess-script/chess_script.js"></script>
-=======
->>>>>>> origin/master
+<script src="chess-script/drag.js">
+</script>
+<script src="chess-script/chess_script.js">
+</script>
 </head>
 <body>
-
-<div>
-<button type="button" id="start_btn" onclick="Start_chess()">Start</button>
+	<button type="button" id="start_btn" onclick="Start_chess()">Start</button>
 <button type="button" id="start_btn" onclick="clear_chess()">clear</button>
-
 <div id="chessboard">
 
     <div>
-	    <div class="empty_square" id="Z1"></div>
-		<div class="empty_square" id="Z2"></div>
-	    <div class="empty_square" id="Z3"></div>
-		<div class="empty_square" id="Z4"></div>
-		<div class="empty_square" id="Z5"></div>
-		<div class="empty_square" id="Z6"></div>
-		<div class="empty_square" id="Z7"></div>
-		<div class="empty_square" id="Z8"></div>
-		<div class="empty_square" id="Z9"></div>
-		<div class="empty_square" id="Z10"></div>
+	    <div class="empty_square" id="100"></div>
+		<div class="empty_square" id="101"></div>
+	    <div class="empty_square" id="102"></div>
+		<div class="empty_square" id="103"></div>
+		<div class="empty_square" id="104"></div>
+		<div class="empty_square" id="105"></div>
+		<div class="empty_square" id="106"></div>
+		<div class="empty_square" id="107"></div>
+		<div class="empty_square" id="108"></div>
+		<div class="empty_square" id="109"></div>
 	</div>
 	
 	<div>
-	    <div class="empty_square" id="Y1"></div>
-		<div class="empty_square" id="Y2"></div>
-	    <div class="empty_square" id="Y3"></div>
-		<div class="empty_square" id="Y4"></div>
-		<div class="empty_square" id="Y5"></div>
-		<div class="empty_square" id="Y6"></div>
-		<div class="empty_square" id="Y7"></div>
-		<div class="empty_square" id="Y8"></div>
-		<div class="empty_square" id="Y9"></div>
-		<div class="empty_square" id="Y10"></div>
+	    <div class="empty_square" id="110"></div>
+		<div class="empty_square" id="111"></div>
+	    <div class="empty_square" id="112"></div>
+		<div class="empty_square" id="113"></div>
+		<div class="empty_square" id="114"></div>
+		<div class="empty_square" id="115"></div>
+		<div class="empty_square" id="116"></div>
+		<div class="empty_square" id="117"></div>
+		<div class="empty_square" id="118"></div>
+		<div class="empty_square" id="119"></div>
 	</div>
 
 
 	<div>
-	    <div class="empty_square" id="X1"></div>
-<<<<<<< HEAD
-		<div class="black_square" id="A1"><img src="images\rook_black.png" width=80% id="rook_black"></div>
-	    <div class="white_square" id="A2" align="center"><img src="images\knight_black.png" width=80% id="knight_black">
+	    <div class="empty_square" id="120"></div>
+		<div class="black_square" id="01" ondrop="drop(event)" ondragover="allowDrop(event)">
+			<img src="images\rook_black.png" id="rook_black" width=80% draggable="true" ondragstart="drag(event)" onclick="drag(event)" title="lol"/>
 		</div>
-		<div class="black_square" id="A3" align="center"><img src="images\bishop_black.png" width=80% id="bishop_black">
+	    <div class="white_square" id="02" align="center" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="images\knight_black.png" width=80% id="knight_black" draggable="true" ondragstart="drag(event)"/>
 		</div>
-		<div class="white_square" id="A4" align="center"><img src="images\queen_black.png" width=80% id="queen_black">
+		<div class="black_square" id="03" align="center"><img src="images\bishop_black.png" id="bishop_black" width=80%>
 		</div>
-		<div class="black_square" id="A5" align="center"><img src="images\king_black.png" width=80%  id="king_black">
+		<div class="white_square" id="04" align="center"><img src="images\queen_black.png" id="queen_black" width=80%>
 		</div>
-		<div class="white_square" id="A6" align="center"><img src="images\bishop_black.png" width=80% id="bishop_black">
+		<div class="black_square" id="05" align="center"><img src="images\king_black.png" id="king_black" width=80%>
 		</div>
-		<div class="black_square" id="A7" align="center"><img src="images\knight_black.png" width=80% id="knight_black">
+		<div class="white_square" id="06" align="center"><img src="images\bishop_black.png" id="bishop_black" width=80%>
 		</div>
-		<div class="white_square" id="A8" align="center"><img src="images\rook_black.png" width=80% id="rook_black">
-=======
-		<div class="black_square" id="A-1" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\rook_black.png" width=80% onclick="pawnPosibleMove(this)"></div>
-	    <div class="white_square" id="A2" align="center" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\knight_black.png" width=80%>
+		<div class="black_square" id="07" align="center"><img src="images\knight_black.png" id="knight_black" width=80%>
 		</div>
-		<div class="black_square" id="A3" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\bishop_black.png" width=80%>
+		<div class="white_square" id="08" align="center"><img src="images\rook_black.png" id="rook_black" width=80%>
 		</div>
-		<div class="white_square" id="A4" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\queen_black.png" width=80%>
-		</div>
-		<div class="black_square" id="A5" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\king_black.png" width=80%>
-		</div>
-		<div class="white_square" id="A6" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\bishop_black.png" width=80%>
-		</div>
-		<div class="black_square" id="A7" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\knight_black.png" width=80%>
-		</div>
-		<div class="white_square" id="A8" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\rook_black.png" width=80%>
->>>>>>> origin/master
-		</div>
-		<div class="empty_square" id="X2"  align="center">
+		<div class="empty_square" id="121"  align="center">
 		</div>
 	</div>
 	<div>
-		<div class="empty_square" id="W1"></div>
-<<<<<<< HEAD
-		<div class="white_square" id="B1"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="black_square" id="B2"align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="white_square" id="B3"align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="black_square" id="B4" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="white_square" id="B5" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="black_square" id="B6" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="white_square" id="B7" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="black_square" id="B8" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-=======
-		<div class="white_square" id="B1"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\pawn_black.png" width=80%></div>
-		<div class="black_square" id="B2"align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\pawn_black.png" width=80%></div>
-		<div class="white_square" id="B3"align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\pawn_black.png" width=80%></div>
-		<div class="black_square" id="B4" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\pawn_black.png" width=80%></div>
-		<div class="white_square" id="B5" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\pawn_black.png" width=80%></div>
-		<div class="black_square" id="B6" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\pawn_black.png" width=80%></div>
-		<div class="white_square" id="B7" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\pawn_black.png" width=80%></div>
-		<div class="black_square" id="B8" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\pawn_black.png" width=80%></div>
->>>>>>> origin/master
-		<div class="empty_square" id="W2" align="center"></div>
+		<div class="empty_square" id="122"></div>
+		<div class="white_square" id="11" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="pawn_black" src="images\pawn_black.png" width=80%></div>
+		<div class="black_square" id="12"align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
+		<div class="white_square" id="13"align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
+		<div class="black_square" id="14" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
+		<div class="white_square" id="15" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
+		<div class="black_square" id="16" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
+		<div class="white_square" id="17" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
+		<div class="black_square" id="18" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
+		<div class="empty_square" id="123" align="center"></div>
 	</div>
 	<div>
-		<div class="empty_square" id="V1"></div>
-		<div class="black_square" id="C1"></div>
-		<div class="white_square" id="C2"></div>
-		<div class="black_square" id="C3"></div>
-		<div class="white_square" id="C4"></div>
-		<div class="black_square" id="C5"></div>
-		<div class="white_square" id="C6"></div>
-		<div class="black_square" id="C7"></div>
-		<div class="white_square" id="C8"></div>
-		<div class="empty_square" id="V2"></div>
+		<div class="empty_square" id="124"></div>
+		<div class="black_square" id="21" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="white_square" id="22"></div>
+		<div class="black_square" id="23"></div>
+		<div class="white_square" id="24"></div>
+		<div class="black_square" id="25"></div>
+		<div class="white_square" id="26"></div>
+		<div class="black_square" id="27"></div>
+		<div class="white_square" id="28"></div>
+		<div class="empty_square" id="125"></div>
 	</div>
 	<div>
-		<div class="empty_square" id="U1"></div>
-		<div class="white_square" id="D1"></div>
-		<div class="black_square" id="D2"></div>
-		<div class="white_square" id="D3"></div>
-		<div class="black_square" id="D4"></div>
-		<div class="white_square" id="D5"></div>
-		<div class="black_square" id="D6"></div>
-		<div class="white_square" id="D7"></div>
-		<div class="black_square" id="D8"></div>
-		<div class="empty_square" id="U2"></div>
+		<div class="empty_square" id="126"></div>
+		<div class="white_square" id="31"></div>
+		<div class="black_square" id="32"></div>
+		<div class="white_square" id="33"></div>
+		<div class="black_square" id="34"></div>
+		<div class="white_square" id="35"></div>
+		<div class="black_square" id="36"></div>
+		<div class="white_square" id="37"></div>
+		<div class="black_square" id="38"></div>
+		<div class="empty_square" id="127"></div>
 	</div>
 	<div>
-		<div class="empty_square" id="T1"></div>
-		<div class="black_square" id="E1"></div>
-		<div class="white_square" id="E2"></div>
-		<div class="black_square" id="E3"></div>
-		<div class="white_square" id="E4"></div>
-		<div class="black_square" id="E5"></div>
-		<div class="white_square" id="E6"></div>
-		<div class="black_square" id="E7"></div>
-		<div class="white_square" id="E8"></div>
-		<div class="empty_square" id="T2"></div>
+		<div class="empty_square" id="128"></div>
+		<div class="black_square" id="41"></div>
+		<div class="white_square" id="42"></div>
+		<div class="black_square" id="43"></div>
+		<div class="white_square" id="44"></div>
+		<div class="black_square" id="45"></div>
+		<div class="white_square" id="46"></div>
+		<div class="black_square" id="47"></div>
+		<div class="white_square" id="48"></div>
+		<div class="empty_square" id="129"></div>
 	</div>
 	<div>
-		<div class="empty_square" id="S1"></div>
-		<div class="white_square" id="F1"></div>
-		<div class="black_square" id="F2"></div>
-		<div class="white_square" id="F3"></div>
-		<div class="black_square" id="F4"></div>
-		<div class="white_square" id="F5"></div>
-		<div class="black_square" id="F6"></div>
-		<div class="white_square" id="F7"></div>
-		<div class="black_square" id="F8"></div>
-		<div class="empty_square" id="S2"></div>
+		<div class="empty_square" id="130"></div>
+		<div class="white_square" id="51"></div>
+		<div class="black_square" id="52"></div>
+		<div class="white_square" id="53"></div>
+		<div class="black_square" id="54"></div>
+		<div class="white_square" id="55"></div>
+		<div class="black_square" id="56"></div>
+		<div class="white_square" id="57"></div>
+		<div class="black_square" id="58"></div>
+		<div class="empty_square" id="131"></div>
 	</div>
 	<div>
-		<div class="empty_square" id="R1"></div>
-		<div class="black_square" id="G1"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
-		<div class="white_square" id="G2" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white" ></div>
-		<div class="black_square" id="G3" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
-		<div class="white_square" id="G4" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
-		<div class="black_square" id="G5" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
-		<div class="white_square" id="G6" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
-		<div class="black_square" id="G7" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
-		<div class="white_square" id="G8" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
-		<div class="empty_square" id="R2" align="center"></div>
+		<div class="empty_square" id="132"></div>
+		<div class="black_square" id="61"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
+		<div class="white_square" id="62" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
+		<div class="black_square" id="63" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
+		<div class="white_square" id="64" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
+		<div class="black_square" id="65" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
+		<div class="white_square" id="66" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
+		<div class="black_square" id="67" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
+		<div class="white_square" id="68" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
+		<div class="empty_square" id="132" align="center"></div>
 	</div>
 	<div>
-		<div class="empty_square" id="Q1"></div>
-		<div class="white_square" id="H1"><img src="images\rook_white.png" width=80%></div>
-		<div class="black_square" id="H2" align="center"><img src="images\knight_white.png" width=80%></div>
-		<div class="white_square" id="H3" align="center"><img src="images\bishop_white.png" width=80%></div>
-		<div class="black_square" id="H4"  align="center"><img src="images\queen_white.png" width=80%></div>
-		<div class="white_square" id="H5" align="center"><img src="images\king_white.png" width=80%></div>
-		<div class="black_square" id="H6" align="center"><img src="images\bishop_white.png" width=80%></div>
-		<div class="white_square" id="H7" align="center"><img src="images\knight_white.png" width=80%></div>
-		<div class="black_square" id="H8" align="center"><img src="images\rook_white.png" width=80%></div>
-		<div class="empty_square" id="Q2" align="center"></div>
+		<div class="empty_square" id="133"></div>
+		<div class="white_square" id="71"><img src="images\rook_white.png" width=80% id="rook_white"></div>
+		<div class="black_square" id="72" align="center"><img src="images\knight_white.png" width=80% id="knight_white"></div>
+		<div class="white_square" id="73" align="center"><img src="images\bishop_white.png" width=80% id="bishop_white"></div>
+		<div class="black_square" id="74"  align="center"><img src="images\queen_white.png" width=80% id="queen_white"></div>
+		<div class="white_square" id="75" align="center"><img src="images\king_white.png" width=80% id="king_white"></div>
+		<div class="black_square" id="76" align="center"><img src="images\bishop_white.png" width=80% id="bishop_white"></div>
+		<div class="white_square" id="77" align="center"><img src="images\knight_white.png" width=80% id="knight_white"></div>
+		<div class="black_square" id="78" align="center"><img src="images\rook_white.png" width=80% id="rook_white"></div>
+		<div class="empty_square" id="134" align="center"></div>
 		
 		
 	</div>
 	
 	 <div>
-	    <div class="empty_square" id="P1"></div>
-		<div class="empty_square" id="P2"></div>
-	    <div class="empty_square" id="P3"></div>
-		<div class="empty_square" id="P4"></div>
-		<div class="empty_square" id="P5"></div>
-		<div class="empty_square" id="P6"></div>
-		<div class="empty_square" id="P7"></div>
-		<div class="empty_square" id="P8"></div>
-		<div class="empty_square" id="P9"></div>
-		<div class="empty_square" id="P10"></div></div>
-	
-	
-	<div>
-	   <div class="empty_square" id="O1"></div>
-		<div class="empty_square" id="O2"></div>
-	    <div class="empty_square" id="O3"></div>
-		<div class="empty_square" id="O4"></div>
-		<div class="empty_square" id="O5"></div>
-		<div class="empty_square" id="O6"></div>
-		<div class="empty_square" id="O7"></div>
-		<div class="empty_square" id="O8"></div>
-		<div class="empty_square" id="O9"></div>
-		<div class="empty_square" id="O10"></div>
+	    <div class="empty_square" id="135"></div>
+		<div class="empty_square" id="136"></div>
+	    <div class="empty_square" id="137"></div>
+		<div class="empty_square" id="138"></div>
+		<div class="empty_square" id="139"></div>
+		<div class="empty_square" id="140"></div>
+		<div class="empty_square" id="141"></div>
+		<div class="empty_square" id="142"></div>
+		<div class="empty_square" id="143"></div>
+		<div class="empty_square" id="144"></div>
 	</div>
 	
 	
+	<div>
+	   <div class="empty_square" id="145"></div>
+		<div class="empty_square" id="146"></div>
+	    <div class="empty_square" id="147"></div>
+		<div class="empty_square" id="148"></div>
+		<div class="empty_square" id="149"></div>
+		<div class="empty_square" id="150"></div>
+		<div class="empty_square" id="151"></div>
+		<div class="empty_square" id="152"></div>
+		<div class="empty_square" id="153"></div>
+		<div class="empty_square" id="154"></div>
+	</div>
 	
-<<<<<<< HEAD
 </div>
-<div>
-<button type="button" id="start_btn">Start</button>
-</div>
-=======
->>>>>>> origin/master
-</div>
- <script src="js\chessJSByAbhi.js"></script>
 </body>
-
 </html>
