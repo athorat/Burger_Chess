@@ -2,7 +2,6 @@
 <head>
 <title>Chess Board Game</title>
 <link rel="stylesheet" type="text/css" href="chess.css">
-<script type="text/javascript" src="chess_script.js"></script>
 </head>
 <body>
 <div id="chessboard">
@@ -36,7 +35,7 @@
 
 	<div>
 	    <div class="empty_square" id="X1"></div>
-		<div class="black_square" id="A1" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\rook_black.png" width=80%></div>
+		<div class="black_square" id="A-1" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\rook_black.png" width=80% onclick="pawnPosibleMove(this)"></div>
 	    <div class="white_square" id="A2" align="center" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\knight_black.png" width=80%>
 		</div>
 		<div class="black_square" id="A3" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\bishop_black.png" width=80%>

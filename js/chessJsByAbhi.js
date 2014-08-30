@@ -18,17 +18,19 @@ function highlightBG(element) {
      element.style.backgroundColor = 'green';
    }   
 }
-/*
-function pawnMove(ele){
+
+function pawnPosibleMove(ele){
 	//ele.style.background='red';
-	var r =ele.id.split("-");
-	var x =r[0];
-    var y =r[1] + 1;
+	//var r =ele.id.split("-");
+  var r =ele.parentNode.id.split("-");
+  var x =r[0];
+    var y = parseInt(r[1]) + 1;
     var xy =x+y;
    // varz="xy";
-  // document.write(xy);
-    xy.style.background='green';
-}
+    getElementById("xy").style.backgroundColor='green';
+ // document.write(xy);
+
+}/*
 function change(ele) {
 //document.getElementById('col')
 ele.style.background='red';
