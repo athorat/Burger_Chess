@@ -14,12 +14,13 @@
 #start_btn {
 
 }
+
 #pawn_black {
-	visibility:hidden;
+  	visibility:hidden;
 }
 
 #rook_black{
- visibility:hidden;
+  visibility:hidden; 
 }
 
 #knight_black{
@@ -27,18 +28,19 @@
 }
 
 #bishop_black{
- visibility:hidden;
  
-}#king_black{
- visibility:hidden;
+ 
+}
+#king_black{
+ visibility:hidden; 
 }
 
 #rook_black{
- visibility:hidden;
+ visibility:hidden; 
 }
 
 #queen_black{
-	visibility:hidden;
+	visibility:hidden; 
 }
 
 .black_square, .white_square , .check_square, .empty_square{

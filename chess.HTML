@@ -8,11 +8,9 @@
 </script>
 </head>
 <body>
-	<button type="button" id="start_btn" onclick="Start_chess()">Start</button>
-<button type="button" id="start_btn" onclick="clear_chess()">clear</button>
-<div id="chessboard">
-
-    <div>
+<!--<button type="button" id="start_btn" onclick="Start_chess()">Start</button>
+<button type="button" id="start_btn" onclick="clear_chess()">clear</button> -->
+<div id="chessboard">    <div>
 	    <div class="empty_square" id="100"></div>
 		<div class="empty_square" id="101"></div>
 	    <div class="empty_square" id="102"></div>
@@ -37,8 +35,6 @@
 		<div class="empty_square" id="118"></div>
 		<div class="empty_square" id="119"></div>
 	</div>
-
-
 	<div>
 	    <div class="empty_square" id="120"></div>
 		<div class="black_square" id="01" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -46,7 +42,7 @@
 		</div>
 	    <div class="white_square" id="02" align="center" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="images\knight_black.png" width=80% id="knight_black" draggable="true" ondragstart="drag(event)"/>
 		</div>
-		<div class="black_square" id="03" align="center"><img src="images\bishop_black.png" id="bishop_black" width=80%>
+		<div class="black_square" id="03" align="center">
 		</div>
 		<div class="white_square" id="04" align="center"><img src="images\queen_black.png" id="queen_black" width=80%>
 		</div>
@@ -63,14 +59,14 @@
 	</div>
 	<div>
 		<div class="empty_square" id="122"></div>
-		<div class="white_square" id="11" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="pawn_black" src="images\pawn_black.png" width=80%></div>
-		<div class="black_square" id="12"align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="white_square" id="13"align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="black_square" id="14" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="white_square" id="15" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="black_square" id="16" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="white_square" id="17" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="black_square" id="18" align="center"><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
+		<div class="white_square" id="11" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="black_square" id="12"align="center"></div>
+		<div class="white_square" id="13"align="center"></div>
+		<div class="black_square" id="14" align="center"></div>
+		<div class="white_square" id="15" align="center"></div>
+		<div class="black_square" id="16" align="center"></div>
+		<div class="white_square" id="17" align="center"></div>
+		<div class="black_square" id="18" align="center"></div>
 		<div class="empty_square" id="123" align="center"></div>
 	</div>
 	<div>
@@ -94,14 +90,14 @@
 		<div class="white_square" id="35"></div>
 		<div class="black_square" id="36"></div>
 		<div class="white_square" id="37"></div>
-		<div class="black_square" id="38"></div>
+		<div class="black_square" id="38"><img src="images\rook_white.png" width=80% id="rook_white" onclick="rook_moves(this)"></div>
 		<div class="empty_square" id="127"></div>
 	</div>
 	<div>
 		<div class="empty_square" id="128"></div>
 		<div class="black_square" id="41"></div>
 		<div class="white_square" id="42"></div>
-		<div class="black_square" id="43"></div>
+		<div class="black_square" id="43"></div>  
 		<div class="white_square" id="44"></div>
 		<div class="black_square" id="45"></div>
 		<div class="white_square" id="46"></div>
@@ -124,8 +120,8 @@
 	<div>
 		<div class="empty_square" id="132"></div>
 		<div class="black_square" id="61"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
-		<div class="white_square" id="62" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
-		<div class="black_square" id="63" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
+		<div class="white_square" id="62" align="center"></div>
+		<div class="black_square" id="63" align="center"></div>
 		<div class="white_square" id="64" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
 		<div class="black_square" id="65" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
 		<div class="white_square" id="66" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
@@ -145,10 +141,8 @@
 		<div class="black_square" id="78" align="center"><img src="images\rook_white.png" width=80% id="rook_white"></div>
 		<div class="empty_square" id="134" align="center"></div>
 		
-		
 	</div>
-	
-	 <div>
+		 <div>
 	    <div class="empty_square" id="135"></div>
 		<div class="empty_square" id="136"></div>
 	    <div class="empty_square" id="137"></div>
@@ -160,8 +154,6 @@
 		<div class="empty_square" id="143"></div>
 		<div class="empty_square" id="144"></div>
 	</div>
-	
-	
 	<div>
 	   <div class="empty_square" id="145"></div>
 		<div class="empty_square" id="146"></div>
@@ -174,7 +166,6 @@
 		<div class="empty_square" id="153"></div>
 		<div class="empty_square" id="154"></div>
 	</div>
-	
 </div>
 </body>
 </html>
