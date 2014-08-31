@@ -1,0 +1,170 @@
+ <html>
+<head>
+<title>Chess Board Game</title>
+<link rel="stylesheet" type="text/css" href="chess.css">
+  <script src="chess-script/drag.js"> 
+</script>
+<script src="chess-script/chess_script.js">
+</script>
+</head>
+<body>
+<!--<button type="button" id="start_btn" onclick="Start_chess()">Start</button>
+<button type="button" id="start_btn" onclick="clear_chess()">clear</button> -->
+<div id="chessboard">    <div>
+	    <div class="empty_square" id="100"></div>
+		<div class="empty_square" id="101"></div>
+	    <div class="empty_square" id="102"></div>
+		<div class="empty_square" id="103"></div>
+		<div class="empty_square" id="104"></div>
+		<div class="empty_square" id="105"></div>
+		<div class="empty_square" id="106"></div>
+		<div class="empty_square" id="107"></div>
+		<div class="empty_square" id="108"></div>
+		<div class="empty_square" id="109"></div>
+	</div>
+	
+	<div>
+	    <div class="empty_square" id="110"></div>
+		<div class="empty_square" id="111"></div>
+	    <div class="empty_square" id="112"></div>
+		<div class="empty_square" id="113"></div>
+		<div class="empty_square" id="114"></div>
+		<div class="empty_square" id="115"></div>
+		<div class="empty_square" id="116"></div>
+		<div class="empty_square" id="117"></div>
+		<div class="empty_square" id="118"></div>
+		<div class="empty_square" id="119"></div>
+	</div>
+	<div>
+	    <div class="empty_square" id="120"></div>
+		<div class="black_square" id="01"  onclick="divClick(this)"><img src="images\rook_black.png" id="br1" name="b" width=80%/>
+		</div>
+	    <div class="white_square" id="02" align="center" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="images\knight_black.png" width=80% id="bh1" name="b" draggable="true" ondragstart="drag(event)"/>
+		</div>
+		<div class="black_square" id="03" align="center">
+		</div>
+		<div class="white_square" id="04" align="center"><img src="images\queen_black.png" id="bq" name="b" width=80%>
+		</div>
+		<div class="black_square" id="05" align="center"  onclick="divClick(this)"><img src="images\king_black.png" id="bk" name="b" width=80%>
+		</div>
+		<div class="white_square" id="06" align="center">
+		</div>
+		<div class="black_square" id="07" align="center"><img src="images\knight_black.png" id="bh2" name="b" width=80%>
+		</div>
+		<div class="white_square" id="08" align="center">
+		</div>
+		<div class="empty_square" id="121"  align="center">
+		</div>
+	</div>
+	<div>
+		<div class="empty_square" id="122"></div>
+		<div class="white_square" id="11" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="black_square" id="12"align="center"></div>
+		<div class="white_square" id="13"align="center"></div>
+		<div class="black_square" id="14" align="center"></div>
+		<div class="white_square" id="15" align="center"></div>
+		<div class="black_square" id="16" align="center"></div>
+		<div class="white_square" id="17" align="center"></div>
+		<div class="black_square" id="18" align="center"></div>
+		<div class="empty_square" id="123" align="center"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="124"></div>
+		<div class="black_square" id="21" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="white_square" id="22"></div>
+		<div class="black_square" id="23"></div>
+		<div class="white_square" id="24"></div>
+		<div class="black_square" id="25"></div>
+		<div class="white_square" id="26"></div>
+		<div class="black_square" id="27" onclick="divClick(this)"><img src="images\rook_black.png" id="br2" name="b" width=80%></div>
+		<div class="white_square" id="28"></div>
+		<div class="empty_square" id="125"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="126"></div>
+		<div class="white_square" id="31"></div>
+		<div class="black_square" id="32" onclick="divClick(this)"></div>
+		<div class="white_square" id="33"  onclick="divClick(this)"><img src="images\bishop_black.png" id="bb1" name="b" width=80%></div>
+		<div class="black_square" id="34"></div>
+		<div class="white_square" id="35" onclick="divClick(this)"><img src="images\rook_white.png" width=80% id="wr1" name="w" ></div>
+		<div class="black_square" id="36"></div>
+		<div class="white_square" id="37" onclick="divClick(this)"><img src="images\bishop_black.png" id="bb2" name="b" width=80%></div>
+		<div class="black_square" id="38"></div>
+		<div class="empty_square" id="127"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="128"></div>
+		<div class="black_square" id="41"></div>
+		<div class="white_square" id="42"></div>
+		<div class="black_square" id="43"></div>  
+		<div class="white_square" id="44"></div>
+		<div class="black_square" id="45"></div>
+		<div class="white_square" id="46"></div>
+		<div class="black_square" id="47"></div>
+		<div class="white_square" id="48"></div>
+		<div class="empty_square" id="129"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="130"></div>
+		<div class="white_square" id="51"><img src="images\pawn_white.png" name="w" width=80% id="wp2"></div>
+		<div class="black_square" id="52"></div>
+		<div class="white_square" id="53"></div>
+		<div class="black_square" id="54"></div>
+		<div class="white_square" id="55"></div>
+		<div class="black_square" id="56"></div>
+		<div class="white_square" id="57"></div>
+		<div class="black_square" id="58"></div>
+		<div class="empty_square" id="131"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="132"></div>
+		<div class="black_square" id="61"><img src="images\pawn_white.png" width=80% id="wp1"></div>
+		<div class="white_square" id="62" align="center"></div>
+		<div class="black_square" id="63" align="center"></div>
+		<div class="white_square" id="64" align="center"></div>
+		<div class="black_square" id="65" align="center"><img src="images\pawn_white.png" name="w" width=80% id="wp3"></div>
+		<div class="white_square" id="66" align="center"><img src="images\pawn_white.png" name="w" width=80% id="wp4"></div>
+		<div class="black_square" id="67" align="center"><img src="images\pawn_white.png" width=80% id="wp5" name="w"></div>
+		<div class="white_square" id="68" align="center"><img src="images\pawn_white.png" width=80% id="wp6" name="w"></div>
+		<div class="empty_square" id="132" align="center"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="133"></div>
+		<div class="white_square" id="71"></div>
+		<div class="black_square" id="72" align="center"><img src="images\knight_white.png" width=80% id="wh1" name="w"></div>
+		<div class="white_square" id="73" align="center" onclick="divClick(this)"><img src="images\bishop_white.png" width=80% id="wb1" name="w"></div>
+		<div class="black_square" id="74"  align="center"><img src="images\queen_white.png" width=80% id="wq" name="w"></div>
+		<div class="white_square" id="75" align="center"><img src="images\king_white.png" width=80% id="wk" name="w"></div>
+		<div class="black_square" id="76" align="center" onclick="divClick(this)"><img src="images\bishop_white.png" width=80% id="wb2" name="w"></div>
+		<div class="white_square" id="77" align="center"><img src="images\knight_white.png" width=80% id="wh2" name="w"></div>
+		<div class="black_square" id="78" align="center" onclick="divClick(this)"><img src="images\rook_white.png" width=80% id="wr2" name="w"></div>
+		<div class="empty_square" id="134" align="center"></div>
+		
+	</div>
+		 <div>
+	    <div class="empty_square" id="135"></div>
+		<div class="empty_square" id="136"></div>
+	    <div class="empty_square" id="137"></div>
+		<div class="empty_square" id="138"></div>
+		<div class="empty_square" id="139"></div>
+		<div class="empty_square" id="140"></div>
+		<div class="empty_square" id="141"></div>
+		<div class="empty_square" id="142"></div>
+		<div class="empty_square" id="143"></div>
+		<div class="empty_square" id="144"></div>
+	</div>
+	<div>
+	   <div class="empty_square" id="145"></div>
+		<div class="empty_square" id="146"></div>
+	    <div class="empty_square" id="147"></div>
+		<div class="empty_square" id="148"></div>
+		<div class="empty_square" id="149"></div>
+		<div class="empty_square" id="150"></div>
+		<div class="empty_square" id="151"></div>
+		<div class="empty_square" id="152"></div>
+		<div class="empty_square" id="153"></div>
+		<div class="empty_square" id="154"></div>
+	</div>
+</div>
+</body>
+</html>
