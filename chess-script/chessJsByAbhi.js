@@ -20,6 +20,7 @@ function highlightBG(element) {
     }
    
 }
+/*
 function isEmpty(i,j)
 {
 //alert("in empty");
@@ -36,6 +37,7 @@ return true;
 
 }
 
+
 function divClick(ele){
   //var x =ele.firstNode.id;
   alert(ele.getElementsByTagName('img')[0].id.charAt(0));
@@ -50,7 +52,7 @@ function divClick(ele){
 	}
 
 }
-  
+*/  
 
 function pawnMove(ele){
     var y = parseInt(ele.id)+ 10;
