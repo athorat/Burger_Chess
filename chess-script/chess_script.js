@@ -8,7 +8,7 @@ var bishop_black="<img src='images/bishop_black.png' width=80%>";
 var queen_black="<img src='images/queen_black.png' width=80%>";
 var king_black="<img src='images/king_black.png' width=80%>";
 var pawn_black="<img src='images/pawn_black.png' width=80%>";
-var pawn_white="<img src='images/pawn_white.png' width=80%>";
+//var pawn_white="<img src='images/pawn_white.png' width=80%>";
 
 
 
@@ -19,23 +19,23 @@ var pawn_white="<img src='images/pawn_white.png' width=80%>";
  {
   //alert("hiii");
  
- document.getElementById("A1").innerHTML=rook_black;
- document.getElementById("A2").innerHTML=knight_black;
- document.getElementById("A3").innerHTML=bishop_black;
- document.getElementById("A4").innerHTML=queen_black;
- document.getElementById("A5").innerHTML=king_black;
- document.getElementById("A6").innerHTML=bishop_black;
- document.getElementById("A7").innerHTML=knight_black;
- document.getElementById("A8").innerHTML=rook_black;
+ document.getElementById("01").innerHTML=rook_black;
+ document.getElementById("02").innerHTML=knight_black;
+ document.getElementById("03").innerHTML=bishop_black;
+ document.getElementById("04").innerHTML=queen_black;
+ document.getElementById("05").innerHTML=king_black;
+ document.getElementById("06").innerHTML=bishop_black;
+ document.getElementById("07").innerHTML=knight_black;
+ document.getElementById("08").innerHTML=rook_black;
  
- document.getElementById("B1").innerHTML=pawn_black;
- document.getElementById("B2").innerHTML=pawn_black;
- document.getElementById("B3").innerHTML=pawn_black;
- document.getElementById("B4").innerHTML=pawn_black;
- document.getElementById("B5").innerHTML=pawn_black;
- document.getElementById("B6").innerHTML=pawn_black;
- document.getElementById("B7").innerHTML=pawn_black;
- document.getElementById("B8").innerHTML=pawn_black;
+ document.getElementById("11").innerHTML=pawn_black;
+ document.getElementById("12").innerHTML=pawn_black;
+ document.getElementById("13").innerHTML=pawn_black;
+ document.getElementById("14").innerHTML=pawn_black;
+ document.getElementById("15").innerHTML=pawn_black;
+ document.getElementById("16").innerHTML=pawn_black;
+ document.getElementById("17").innerHTML=pawn_black;
+ document.getElementById("18").innerHTML=pawn_black;
  
  
  
