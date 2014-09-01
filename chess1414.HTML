@@ -9,7 +9,7 @@
 </head>
 <body>
 	<button type="button" id="start_btn" onClick="Start_chess()">Start</button>
-<button type="button" id="start_btn" onClick="clear_chess()">clear</button>
+<button type="button" id="start_btn" onClick="Replay()">clear</button>
 <div id="chessboard">
 
     <div>
@@ -41,7 +41,7 @@
 
 	<div>
 	    <div class="empty_square" id="120"></div>
-		<div class="black_square" id="01" ondrop="drop(event)" ondragover="allowDrop(event)" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' ">
+		<div class="black_square" id="01"  onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' ">
 
 			<img src="images\rook_black.png" id="rook_black" width=80% draggable="true" ondragstart="drag(event)" onClick="drag(event)" title="lol"/>
 
@@ -63,56 +63,56 @@
 		<div class="empty_square" id="121"  align="center"></div>
 	<div>
 		<div class="empty_square" id="122"></div>
-		<div class="white_square" id="11" ondrop="drop(event)"  onclick="divClick(this)" ondragover="allowDrop(event)" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img id="pawn_black" src="images\pawn_black.png" width=80%  onMouseOver="divClick(this.parentNode.id)"></div>
-		<div class="black_square" id="12"align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="white_square" id="13"align="center" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="black_square" id="14" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="white_square" id="15" align="center" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="black_square" id="16" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="white_square" id="17" align="center" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
-		<div class="black_square" id="18" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "><img src="images\pawn_black.png" width=80% id="pawn_black"></div>
+		<div class="white_square" id="11" ondrop="drop(event)"  onclick="divClick(this)" ondragover="allowDrop(event)" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img src="images\pawn_black.png" width=80% id="bp"></div>
+		<div class="black_square" id="12"align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' " onclick="divClick(this)"><img src="images\pawn_black.png" width=80% id="bp"></div>
+		<div class="white_square" id="13"align="center" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "onclick="divClick(this)"><img src="images\pawn_black.png" width=80% id="bp"></div>
+		<div class="black_square" id="14" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "onclick="divClick(this)"><img src="images\pawn_black.png" width=80% id="bp"></div>
+		<div class="white_square" id="15" align="center" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "onclick="divClick(this)"><img src="images\pawn_black.png" width=80% id="bp"></div>
+		<div class="black_square" id="16" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "onclick="divClick(this)"><img src="images\pawn_black.png" width=80% id="bp"></div>
+		<div class="white_square" id="17" align="center" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "onclick="divClick(this)"><img src="images\pawn_black.png" width=80% id="bp"></div>
+		<div class="black_square" id="18" align="center"onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#45DAFF' "onclick="divClick(this)"><img src="images\pawn_black.png" width=80% id="bp"></div>
 		<div class="empty_square" id="123" align="center"></div>
 	</div>
 	<div>
 		<div class="empty_square" id="124"></div>
-		<div class="black_square" id="21" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-			<div class="white_square" id="22"><img src="images\rook_white.png" width=80% id="wr"></div>
-		<div class="black_square" id="23"></div>
-		<div class="white_square" id="24"></div>
-		<div class="black_square" id="25"></div>
-		<div class="white_square" id="26"></div>
-		<div class="black_square" id="27"></div>
-		<div class="white_square" id="28"></div>
-		<div class="empty_square" id="125"></div>
+		<div class="black_square" id="21" ondrop="drop(event)" ondragover="allowDrop(event)" onClick="divClick(this)"  ></div>
+			<div class="white_square" id="22"onClick="divClick(this)"><img src="images\rook_white.png" width=80% id="wr"></div>
+		<div class="black_square" id="23"onClick="divClick(this)"></div>
+		<div class="white_square" id="24"onClick="divClick(this)"></div>
+		<div class="black_square" id="25"onClick="divClick(this)"></div>
+		<div class="white_square" id="26"onClick="divClick(this)"></div>
+		<div class="black_square" id="27"onClick="divClick(this)"></div>
+		<div class="white_square" id="28"onClick="divClick(this)"></div>
+		<div class="empty_square" id="125"onClick="divClick(this)"></div>
 	</div>
 	<div>
-		<div class="empty_square" id="126"></div>
-		<div class="white_square" id="31"><img src="images\rook_white.png" width=80% id="wr"></div>
-		<div class="black_square" id="32"></div>
-		<div class="white_square" id="33"></div>
-		<div class="black_square" id="34"></div>
-		<div class="white_square" id="35" onClick=" qMove(this)" ><img src="images\queen_black.png" id="queen_black" width=80% onClick="qMove(this)"></div>
-		<div class="black_square" id="36"></div>
-		<div class="white_square" id="37"></div>
-		<div class="black_square" id="38"></div>
-		<div class="empty_square" id="127"></div>
+		<div class="empty_square" id="126"onClick="divClick(this)"></div>
+		<div class="white_square" id="31"onClick="divClick(this)"><img src="images\rook_white.png" width=80% id="wr"></div>
+		<div class="black_square" id="32"onClick="divClick(this)"></div>
+		<div class="white_square" id="33"onClick="divClick(this)"></div>
+		<div class="black_square" id="34"onClick="divClick(this)"></div>
+		<div class="white_square" id="35" onClick="divClick(this)" ><img src="images\queen_black.png" id="bq" width=80%></div>
+		<div class="black_square" id="36"onClick="divClick(this)"></div>
+		<div class="white_square" id="37"onClick="divClick(this)"></div>
+		<div class="black_square" id="38"onClick="divClick(this)"></div>
+		<div class="empty_square" id="127"onClick="divClick(this)"></div>
 	</div>
 	<div>
 		<div class="empty_square" id="128"></div>
-		<div class="black_square" id="41"><img src="images\rook_white.png" width=80% id="wr"></div>
+		<div class="black_square" id="41"onClick="divClick(this)"><img src="images\rook_white.png" width=80% id="wr"></div>
 <div class="white_square" id="42" ondrop="drop(event)" onClick="divClick(this)" ondragover="allowDrop()" onMouseOver="highlightBG(this)" onMouseOut="this.style.background='#CCF5FF' "><img id="pawn_black" src="images\pawn_black.png" width=80%  onMouseOver="divClick(this.parentNode.id)"></div>
-		<div class="black_square" id="43"></div>
-		<div class="white_square" id="44"></div>
-		<div class="black_square" id="45" onClick=" qMove(this)"></div>
-		<div class="white_square" id="46"></div>
-		<div class="black_square" id="47"></div>
-		<div class="white_square" id="48"></div>
-		<div class="empty_square" id="129"></div>
+		<div class="black_square" id="43"onClick="divClick(this)"></div>
+		<div class="white_square" id="44"onClick="divClick(this)"></div>
+		<div class="black_square" id="45" onClick="divClick(this)"></div>
+		<div class="white_square" id="46"onClick="divClick(this)"></div>
+		<div class="black_square" id="47"onClick="divClick(this)"></div>
+		<div class="white_square" id="48"onClick="divClick(this)"></div>
+		<div class="empty_square" id="129"onClick="divClick(this)"></div>
 	</div>
 	<div>
 		<div class="empty_square" id="130"></div>
-		<div class="white_square" id="51"><img src="images\rook_white.png" width=80% id="wr"></div>
-		<div class="black_square" id="52"></div>
+		<div class="white_square" id="51" onClick="setElement(this)"><img src="images\rook_white.png" width=80% id="wr"></div>
+		<div class="black_square" id="52" onClick="setElement(this)"></div>
 		<div class="white_square" id="53"></div>
 		<div class="black_square" id="54" onClick=" qMove(this)"></div>
 		<div class="white_square" id="55" ></div>
@@ -124,7 +124,7 @@
 	<div>
 		<div class="empty_square" id="132"></div>
 		<div class="black_square" id="61"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
-		<div class="white_square" id="62" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
+		<div class="white_square" id="62" align="center" onClick="getId(this)"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
 		<div class="black_square" id="63" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
 		<div class="white_square" id="64" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
 		<div class="black_square" id="65" align="center"><img src="images\pawn_white.png" width=80% id="pawn_white"></div>
@@ -177,5 +177,6 @@
 	
 </div>
 <script src="chess-script/chessJsByAbhi.js" ></script>
+<script src="chess-script/move_element.js" ></script>
 </body>
 </html>
