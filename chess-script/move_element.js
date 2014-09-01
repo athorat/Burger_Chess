@@ -9,10 +9,24 @@ alert(divId);
 			alert(div2Id);
 			var image= document.getElementById(divId).innerHTML;
 			 alert(image);
-			// var child = divId.firstChild;
+			
 			document.getElementById(divId).innerHTML = "";
 			
 			//var destId = element.id;
+			
+			// var imageInBox=document.getElementById(div2Id).innerHTML;
+			 
+			
+			
+			/* boxvar=135;
+			 document.getElementById(boxvar).innerHTML=imageInBox;
+			 */ 
+			 
+			// document.getElementById("chessBox").innerHTML=imageInBox;
+			 
+			// document.getElementById().setAttribute("style","border-color:red;");
+
+			
 			
 			 
             document.getElementById(div2Id).innerHTML = image;
