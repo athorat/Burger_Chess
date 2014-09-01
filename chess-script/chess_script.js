@@ -46,6 +46,8 @@ function clear_chess()
 
  }
  
+ 
+  var divId;
 function divClick(element)
  {
  
@@ -54,7 +56,7 @@ function divClick(element)
  var type= element.firstChild.id.charAt(1);
  alert(color);
  alert(type);
-var divId=element.id;
+ divId=element.id;
 // alert(divId);
  
  elementId=element.firstChild.id;
@@ -73,6 +75,23 @@ var divId=element.id;
  {
  bmove(divId);
  }
+  //////////////
+  if(type=="q")
+ {
+ qMove(element);
+ }
+ 
+ if(type=='p')
+   {
+		if(color =='w'){
+			wpawnMove(element);
+			}
+	  else{
+		pawnMove(element)
+		}
+    }
+ ////////////////////////
+ 
  }
  
 
