@@ -249,3 +249,126 @@ function qMove(divId){
 	}
 	
 	}
+
+function qMove(divId){
+	//alert("in king move function");
+	alert(divId);
+
+	var x=parseInt(divId.id.charAt(0));
+	var y=parseInt(divId.id.charAt(1));
+	alert(x);
+	alert(y);
+	
+
+
+	for(j=y+1;j<=8;j++)
+	{
+	//alert(x.toString()+j.toString())
+		var xy =x.toString()+j.toString() ;
+	   if(isEmpty(x,j))
+	   {
+	    document.getElementById(xy).style.borderColor='red';
+	   }
+	   else
+	   break;
+	}
+	
+	for(j=y-1;j>=0;j--)
+	{
+		var xy =x.toString()+j.toString() ;
+	   if(isEmpty(x,j))
+	   {
+	    document.getElementById(xy).style.borderColor='red';
+	   }
+	   else
+	   break;
+	}
+	
+	for(i=x-1;i>=0;i--)
+	{
+	//alert(i.toString()+y.toString());
+		var xy =i.toString()+y.toString() ;
+	   if(isEmpty(i,y))
+	   {
+	    document.getElementById(xy).style.borderColor='red';
+	   }
+	   else
+	   break;
+	}
+	
+	for(i=x+1;i<=8;i++)
+	{
+	//alert(i.toString()+y.toString());
+		var xy =i.toString()+y.toString() ;
+	   if(isEmpty(i,y))
+	   {
+	    document.getElementById(xy).style.borderColor='red';
+	   }
+	   else
+	   break;
+	}
+	
+	for (i = x+1,j=y+1; i <= 8,j<=8; i++,j++)
+	{
+		
+		alert(i.toString()+j.toString());
+			var xy =i.toString()+j.toString() ;
+			   if(isEmpty(i,j))
+			   {
+				document.getElementById(xy).style.borderColor='red';
+				break;
+			   }
+			   else
+			   	break;
+				
+	}
+	
+	for (i = x-1,j=y-1; i >= 0,j>= 0; i--,j--)
+	{
+		
+		alert(i.toString()+j.toString());
+			var xy =i.toString()+j.toString() ;
+			   if(isEmpty(i,j))
+			   {
+				document.getElementById(xy).style.borderColor='red';
+				//break;
+			   }
+			   else
+			   	break;
+				
+	}
+	for (i = x-1,j=y+1; i >= 0,j<= 8; i--,j++)
+	{
+		
+		alert(i.toString()+j.toString());
+			var xy =i.toString()+j.toString() ;
+			   if(isEmpty(i,j))
+			   {
+				document.getElementById(xy).style.borderColor='red';
+				//break;
+			   }
+			   else
+			   	break;
+				
+	}
+	for (i = x+1
+	
+	,j=y-1; i <= 8,j >= 0;i++,j--)
+	{
+		
+		alert(i.toString()+j.toString());
+			var xy =i.toString()+j.toString() ;
+			   if(isEmpty(i,j))
+			   {
+				document.getElementById(xy).style.borderColor='red';
+				//break;
+			   }
+			   else
+			   	break;
+				
+	}
+	
+	
+	
+	}
+
