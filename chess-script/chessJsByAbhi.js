@@ -6,15 +6,16 @@
 	ele.style.background='#CCF5FF';
 }*/
 
+var mo;
 function highlightBG(element) {
   /*if(element.style.background == 'green')
     {
        defaultBg(element);
     }
    else{*/
-    var x =element.childNodes;
+    var childs =element.childNodes;
 
-    if (x[0].nodeName=='IMG' && x[0].style.visibility!= 'hidden')
+    if (childs[0].nodeName=='IMG' && childs[0].style.visibility!= 'hidden')
     {
      element.style.backgroundColor = 'green';
     }
@@ -55,11 +56,11 @@ function divClick(ele){
 */  
 
 function pawnMove(ele){
-    var y = parseInt(ele.id)+ 10;
+    var firstStep = parseInt(ele.id)+ 10;
     //document.write(y>=11 && y<=18);
     if(ele.id>=11 && ele.id<=18)
     {
-      var x = y+10;
+      var secondStep =  firstStep+10;
 	 
 	 //document.write((y+1).toString().charAt(1) );
 	
@@ -68,43 +69,49 @@ function pawnMove(ele){
 				// if((((y+1).toString().charAt(1)>=1&& (y+1).toString().charAt(1)<=8)  && (document.getElementById(y+1).firstChild != null) )&& ((document.getElementById(y+1).firstChild.id.charAt(0) == 'w' ))){
 				 //document.write((document.getElementById(y+1).firstChild.id.charAt(0) == 'w' ));
 				 
-	  if(document.getElementById(y).firstChild == null)  {
-		document.getElementById(y).style.borderColor="red";
+	  if(document.getElementById( firstStep).firstChild == null)  {
+		document.getElementById( firstStep).style.borderColor="red";
+		//document.getElementById(div2Id).setAttribute("onclick","getId(this)");
 		//document.getElementById(y + 1).style.borderColor="red
 		
-		 if(document.getElementById(x).firstChild == null){
-			document.getElementById(x).style.borderColor="red";
+		 if(document.getElementById(secondStep ).firstChild == null){
+			document.getElementById(secondStep ).style.borderColor="red";
+			document.getElementById(secondStep ).setAttribute("onclick","getId(this)");
 		}
 		}
 		
-				document.getElementById(y + 1).style.backgroundColor="red";
+				//document.getElementById(y + 1).style.backgroundColor="red";
 				
 		
-		if((((y+1).toString().charAt(1)>=1&& (y+1).toString().charAt(1)<=8)  && (document.getElementById(y+1).firstChild != null) )&& ((document.getElementById(y+1).firstChild.id.charAt(0) == 'w' ))){
+		if(((( firstStep+1).toString().charAt(1)>=1&& ( firstStep+1).toString().charAt(1)<=8)  && (document.getElementById( firstStep+1).firstChild != null) )&& ((document.getElementById( firstStep+1).firstChild.id.charAt(0) == 'w' ))){
 		
-			document.getElementById(y + 1).style.backgroundColor="red";
+			document.getElementById( firstStep + 1).style.backgroundColor="red";
+			document.getElementById( firstStep+1).setAttribute("onclick","getId(this)");
 		}
-		if((((y-1).toString().charAt(1)>=1&& (y-1).toString().charAt(1)<=8)  && (document.getElementById(y-1).firstChild != null) )&& ((document.getElementById(y-1).firstChild.id.charAt(0) == 'w' ))){
+		if(((( firstStep-1).toString().charAt(1)>=1&& ( firstStep-1).toString().charAt(1)<=8)  && (document.getElementById( firstStep-1).firstChild != null) )&& ((document.getElementById( firstStep-1).firstChild.id.charAt(0) == 'w' ))){
 		
-			document.getElementById(y - 1).style.backgroundColor="red";
+			document.getElementById( firstStep - 1).style.backgroundColor="red";
+			document.getElementById( firstStep-1).setAttribute("onclick","getId(this)");
 		}
 		
 		
     }else
     {
 	
-       if(document.getElementById(y).firstChild == null)  {
-		document.getElementById(y).style.borderColor="red";
+       if(document.getElementById(firstStep).firstChild == null)  {
+		document.getElementById(firstStep).style.borderColor="red";
 		//document.getElementById(y + 1).style.borderColor="red";
 		//document.getElementById(y - 1).style.borderColor="red";
 		}
-		if((((y+1).toString().charAt(1)>=1&& (y+1).toString().charAt(1)<=8)  && (document.getElementById(y+1).firstChild != null) )&& ((document.getElementById(y+1).firstChild.id.charAt(0) == 'w' ))){
+		if((((firstStep+1).toString().charAt(1)>=1&& (firstStep+1).toString().charAt(1)<=8)  && (document.getElementById(firstStep+1).firstChild != null) )&& ((document.getElementById(firstStep+1).firstChild.id.charAt(0) == 'w' ))){
 		
-			document.getElementById(y + 1).style.backgroundColor="red";
+			document.getElementById(firstStep + 1).style.backgroundColor="red";
+			document.getElementById(firstStep+1).setAttribute("onclick","getId(this)");
 		}
-		if((((y-1).toString().charAt(1)>=1&& (y-1).toString().charAt(1)<=8)  && (document.getElementById(y-1).firstChild != null) )&& ((document.getElementById(y-1).firstChild.id.charAt(0) == 'w' ))){
+		if((((firstStep-1).toString().charAt(1)>=1&& (firstStep-1).toString().charAt(1)<=8)  && (document.getElementById(firstStep-1).firstChild != null) )&& ((document.getElementById(firstStep-1).firstChild.id.charAt(0) == 'w' ))){
 		
-			document.getElementById(y - 1).style.backgroundColor="red";
+			document.getElementById(firstStep - 1).style.backgroundColor="red";
+			document.getElementById(firstStep-1).setAttribute("onclick","getId(this)");
 		}
     }
 	
@@ -172,12 +179,12 @@ function wpawnMove(ele){
 
 
 
-function qMove(divId){
-	//alert("in king move function");
-	alert(divId);
-
-	var x=parseInt(divId.id.charAt(0));
-	var y=parseInt(divId.id.charAt(1));
+function qMove(obj){
+alert("in q move");
+	alert(obj);
+//alert("in q move function");
+	var x=parseInt(obj.id.charAt(0));
+	var y=parseInt(obj.id.charAt(1));
 	alert(x);
 	alert(y);
 	
@@ -185,11 +192,11 @@ function qMove(divId){
 
 	for(j=y+1;j<=8;j++)
 	{
-	//alert(x.toString()+j.toString())
 		var xy =x.toString()+j.toString() ;
 	   if(isEmpty(x,j))
-	   {
+	   {  alert("in is empty for 1");
 	    document.getElementById(xy).style.borderColor='red';
+		document.getElementById(xy).setAttribute("onclick","getId(this)");
 	   }
 	   else
 	   break;
@@ -200,7 +207,9 @@ function qMove(divId){
 		var xy =x.toString()+j.toString() ;
 	   if(isEmpty(x,j))
 	   {
+	   alert("in is empty for 2");
 	    document.getElementById(xy).style.borderColor='red';
+		document.getElementById(xy).setAttribute("onclick","getId(this)");
 	   }
 	   else
 	   break;
@@ -211,8 +220,9 @@ function qMove(divId){
 	//alert(i.toString()+y.toString());
 		var xy =i.toString()+y.toString() ;
 	   if(isEmpty(i,y))
-	   {
+	   { alert("in is empty for 3");
 	    document.getElementById(xy).style.borderColor='red';
+		document.getElementById(xy).setAttribute("onclick","getId(this)");
 	   }
 	   else
 	   break;
@@ -224,7 +234,9 @@ function qMove(divId){
 		var xy =i.toString()+y.toString() ;
 	   if(isEmpty(i,y))
 	   {
+	   alert("in is empty for 4");
 	    document.getElementById(xy).style.borderColor='red';
+		document.getElementById(xy).setAttribute("onclick","getId(this)");
 	   }
 	   else
 	   break;
@@ -233,12 +245,12 @@ function qMove(divId){
 	for (i = x+1,j=y+1; i <= 8,j<=8; i++,j++)
 	{
 		
-		alert(i.toString()+j.toString());
 			var xy =i.toString()+j.toString() ;
 			   if(isEmpty(i,j))
 			   {
 				document.getElementById(xy).style.borderColor='red';
-				break;
+				document.getElementById(xy).setAttribute("onclick","getId(this)");
+				
 			   }
 			   else
 			   	break;
@@ -247,12 +259,11 @@ function qMove(divId){
 	
 	for (i = x-1,j=y-1; i >= 0,j>= 0; i--,j--)
 	{
-		
-		alert(i.toString()+j.toString());
 			var xy =i.toString()+j.toString() ;
 			   if(isEmpty(i,j))
 			   {
 				document.getElementById(xy).style.borderColor='red';
+				document.getElementById(xy).setAttribute("onclick","getId(this)");
 				//break;
 			   }
 			   else
@@ -261,28 +272,24 @@ function qMove(divId){
 	}
 	for (i = x-1,j=y+1; i >= 0,j<= 8; i--,j++)
 	{
-		
-		alert(i.toString()+j.toString());
 			var xy =i.toString()+j.toString() ;
 			   if(isEmpty(i,j))
 			   {
 				document.getElementById(xy).style.borderColor='red';
+				document.getElementById(xy).setAttribute("onclick","getId(this)");
 				//break;
 			   }
 			   else
 			   	break;
 				
 	}
-	for (i = x+1
-	
-	,j=y-1; i <= 8,j >= 0;i++,j--)
+	for (i = x+1,j=y-1; i <= 8,j >= 0;i++,j--)
 	{
-		
-		alert(i.toString()+j.toString());
 			var xy =i.toString()+j.toString() ;
 			   if(isEmpty(i,j))
 			   {
 				document.getElementById(xy).style.borderColor='red';
+				document.getElementById(xy).setAttribute("onclick","getId(this)");
 				//break;
 			   }
 			   else
@@ -294,3 +301,21 @@ function qMove(divId){
 	
 	}
 
+fuction Replay(){
+
+int i=0;
+while(i < arr1.length) {
+      str2=mo[i];
+
+		var res1 = str2.substring(0,2);
+		var res2 = str2.substring(3,5);
+
+			var xyx=document.getElementById(res1).innerHTML;
+			document.getElementById(res2).innerHTML=xyx;
+			document.getElementById(res1).innerHTML="";
+
+      i++;
+      if(i==arr1.length)
+       break;   
+   }
+}
