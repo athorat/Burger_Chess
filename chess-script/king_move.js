@@ -1,5 +1,5 @@
 
-function kmove(divId)
+function kingMove(divId)
 {
 	// alert("in king move function");
 	//var dId=divId;
