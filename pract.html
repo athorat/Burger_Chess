@@ -8,6 +8,11 @@
 </script>
 <script src="chess-script/move_element.js">
 </script>
+<script src="chess-script/king_move.js">
+</script>
+<script src="chess-script/chessJsByAbhi.js" >
+</script>
+
 
 
 </head>
@@ -45,35 +50,35 @@
 	</div>
 	<div>
 	    <div class="empty_square" id="120"></div>
-		<div class="black_square" id="01"  onclick="divClick(this)"><img src="images\rook_black.png" id="br1" name="b" width=80%/>
+		<div class="black_square" id="01"  onclick="entry(this)"><img src="images\rook_black.png" id="br1" name="b" width=80%/>
 		</div>
-	    <div class="white_square" id="02" align="center" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="images\knight_black.png" width=80% id="bh1" name="b" draggable="true" ondragstart="drag(event)"/>
+	    <div class="white_square" id="02" align="center" onclick="entry(this)"><img src="images\knight_black.png" width=80% id="bh1" name="b"/>
 		</div>
-		<div class="black_square" id="03" align="center">
+		<div class="black_square" id="03" align="center" onclick="entry(this)"><img src="images\bishop_black.png" id="bb1" name="b" width=80%>
 		</div>
-		<div class="white_square" id="04" align="center"><img src="images\queen_black.png" id="bq" name="b" width=80%>
+		<div class="white_square" id="04" align="center" onclick="entry(this)"><img src="images\queen_black.png" id="bq" name="b" width=80%>
 		</div>
-		<div class="black_square" id="05" align="center"  onclick="divClick(this)"><img src="images\king_black.png" id="bk" name="b" width=80%>
+		<div class="black_square" id="05" align="center" onclick="entry(this)"><img src="images\king_black.png" id="bk" name="b" width=80%>
 		</div>
-		<div class="white_square" id="06" align="center">
+		<div class="white_square" id="06" align="center" onclick="entry(this)"><img src="images\bishop_black.png" id="bb2" name="b" width=80%>
 		</div>
-		<div class="black_square" id="07" align="center"><img src="images\knight_black.png" id="bh2" name="b" width=80%>
+		<div class="black_square" id="07" align="center" onclick="entry(this)"><img src="images\knight_black.png" id="bh2" name="b" width=80%>
 		</div>
-		<div class="white_square" id="08" align="center">
+		<div class="white_square" id="08" align="center" onclick="entry(this)"><img src="images\rook_black.png" id="br2" name="b" width=80%/>
 		</div>
 		<div class="empty_square" id="121"  align="center">
 		</div>
 	</div>
 	<div>
 		<div class="empty_square" id="122"></div>
-		<div class="white_square" id="11" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-		<div class="black_square" id="12"align="center"></div>
-		<div class="white_square" id="13"align="center"></div>
-		<div class="black_square" id="14" align="center"></div>
-		<div class="white_square" id="15" align="center"></div>
-		<div class="black_square" id="16" align="center"></div>
-		<div class="white_square" id="17" align="center"></div>
-		<div class="black_square" id="18" align="center"></div>
+		<div class="white_square" id="11" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp1" name="w"></div>
+		<div class="black_square" id="12"align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp2" name="w"></div>
+		<div class="white_square" id="13"align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp3" name="w"></div>
+		<div class="black_square" id="14" align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp4" name="w"></div>
+		<div class="white_square" id="15" align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp6" name="w"></div>
+		<div class="black_square" id="16" align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp7" name="w"></div>
+		<div class="white_square" id="17" align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp8" name="w"></div>
+		<div class="black_square" id="18" align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp8" name="w"></div>
 		<div class="empty_square" id="123" align="center"></div>
 	</div>
 	<div>
@@ -84,19 +89,19 @@
 		<div class="white_square" id="24"></div>
 		<div class="black_square" id="25"></div>
 		<div class="white_square" id="26"></div>
-		<div class="black_square" id="27" onclick="divClick(this)"><img src="images\rook_black.png" id="br2" name="b" width=80%></div>
+		<div class="black_square" id="27" onclick="entry(this)"></div>
 		<div class="white_square" id="28"></div>
 		<div class="empty_square" id="125"></div>
 	</div>
 	<div>
 		<div class="empty_square" id="126"></div>
 		<div class="white_square" id="31"></div>
-		<div class="black_square" id="32" onclick="divClick(this)"></div>
-		<div class="white_square" id="33"  onclick="divClick(this)"><img src="images\bishop_black.png" id="bb1" name="b" width=80%></div>
+		<div class="black_square" id="32" onclick="entry(this)"></div>
+		<div class="white_square" id="33"  onclick="entry(this)"></div>
 		<div class="black_square" id="34"></div>
-		<div class="white_square" id="35" onclick="divClick(this)"><img src="images\rook_white.png" width=80% id="wr1" name="w" ></div>
+		<div class="white_square" id="35" onclick="entry(this)"></div>
 		<div class="black_square" id="36"></div>
-		<div class="white_square" id="37" onclick="divClick(this)"></div>
+		<div class="white_square" id="37" onclick="entry(this)"></div>
 		<div class="black_square" id="38"></div>
 		<div class="empty_square" id="127"></div>
 	</div>
@@ -107,14 +112,14 @@
 		<div class="black_square" id="43"></div>  
 		<div class="white_square" id="44"></div>
 		<div class="black_square" id="45"></div>
-		<div class="white_square" id="46" onclick="divClick(this)"><img src="images\bishop_black.png" id="bb2" name="b" width=80%></div>
+		<div class="white_square" id="46" onclick="entry(this)"></div>
 		<div class="black_square" id="47"></div>
 		<div class="white_square" id="48"></div>
 		<div class="empty_square" id="129"></div>
 	</div>
 	<div>
 		<div class="empty_square" id="130"></div>
-		<div class="white_square" id="51"><img src="images\pawn_white.png" name="w" width=80% id="wp2"></div>
+		<div class="white_square" id="51"></div>
 		<div class="black_square" id="52"></div>
 		<div class="white_square" id="53"></div>
 		<div class="black_square" id="54"></div>
@@ -126,26 +131,26 @@
 	</div>
 	<div>
 		<div class="empty_square" id="132"></div>
-		<div class="black_square" id="61"><img src="images\pawn_white.png" width=80% id="wp1"></div>
-		<div class="white_square" id="62" align="center"></div>
-		<div class="black_square" id="63" align="center"></div>
-		<div class="white_square" id="64" align="center"></div>
-		<div class="black_square" id="65" align="center"><img src="images\pawn_white.png" name="w" width=80% id="wp3"></div>
-		<div class="white_square" id="66" align="center"><img src="images\pawn_white.png" name="w" width=80% id="wp4"></div>
-		<div class="black_square" id="67" align="center"><img src="images\pawn_white.png" width=80% id="wp5" name="w"></div>
-		<div class="white_square" id="68" align="center"><img src="images\pawn_white.png" width=80% id="wp6" name="w"></div>
+		<div class="black_square" id="61" onclick="entry(this)"><img src="images\pawn_white.png" width=80% id="wp1"></div>
+		<div class="white_square" id="62" align="center" onclick="entry(this)"><img src="images\pawn_white.png" width=80% id="wp2" name="w"></div>
+		<div class="black_square" id="63" align="center" onclick="entry(this)"><img src="images\pawn_white.png" width=80% id="wp3" name="w"></div>
+		<div class="white_square" id="64" align="center" onclick="entry(this)"><img src="images\pawn_white.png" width=80% id="wp4" name="w"></div>
+		<div class="black_square" id="65" align="center" onclick="entry(this)"><img src="images\pawn_white.png" name="w" width=80% id="wp5"></div>
+		<div class="white_square" id="66" align="center" onclick="entry(this)"><img src="images\pawn_white.png" name="w" width=80% id="wp6"></div>
+		<div class="black_square" id="67" align="center" onclick="entry(this)"><img src="images\pawn_white.png" width=80% id="wp7" name="w"></div>
+		<div class="white_square" id="68" align="center" onclick="entry(this)"><img src="images\pawn_white.png" width=80% id="wp8" name="w"></div>
 		<div class="empty_square" id="132" align="center"></div>
 	</div>
 	<div>
 		<div class="empty_square" id="133"></div>
-		<div class="white_square" id="71"></div>
-		<div class="black_square" id="72" align="center"><img src="images\knight_white.png" width=80% id="wh1" name="w"></div>
-		<div class="white_square" id="73" align="center" onclick="divClick(this)"><img src="images\bishop_white.png" width=80% id="wb1" name="w"></div>
-		<div class="black_square" id="74"  align="center"><img src="images\queen_white.png" width=80% id="wq" name="w"></div>
-		<div class="white_square" id="75" align="center"><img src="images\king_white.png" width=80% id="wk" name="w"></div>
-		<div class="black_square" id="76" align="center" onclick="divClick(this)"><img src="images\bishop_white.png" width=80% id="wb2" name="w"></div>
-		<div class="white_square" id="77" align="center"><img src="images\knight_white.png" width=80% id="wh2" name="w"></div>
-		<div class="black_square" id="78" align="center" onclick="divClick(this)"><img src="images\rook_white.png" width=80% id="wr2" name="w"></div>
+		<div class="white_square" id="71" onclick="entry(this)"><img src="images\rook_white.png" width=80% id="wr1" name="w"></div>
+		<div class="black_square" id="72" align="center" onclick="entry(this)"><img src="images\knight_white.png" width=80% id="wh1" name="w"></div>
+		<div class="white_square" id="73" align="center" onclick="entry(this)"><img src="images\bishop_white.png" width=80% id="wb1" name="w"></div>
+		<div class="black_square" id="74"  align="center" onclick="entry(this)"><img src="images\queen_white.png" width=80% id="wq" name="w"></div>
+		<div class="white_square" id="75" align="center" onclick="entry(this)"><img src="images\king_white.png" width=80% id="wk" name="w"></div>
+		<div class="black_square" id="76" align="center" onclick="entry(this)"><img src="images\bishop_white.png" width=80% id="wb2" name="w"></div>
+		<div class="white_square" id="77" align="center" onclick="entry(this)"><img src="images\knight_white.png" width=80% id="wh2" name="w"></div>
+		<div class="black_square" id="78" align="center" onclick="entry(this)"><img src="images\rook_white.png" width=80% id="wr2" name="w"></div>
 		<div class="empty_square" id="134" align="center"></div>
 		
 	</div>

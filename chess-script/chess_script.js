@@ -1,16 +1,20 @@
 // java script file 
 
 //var chess=new chess();
-var elementId;
+var pieceId;
 var divId="";
-var rook_black="<img src='images/rook_black.png' width=80%>";
-var knight_black="<img src='images/knight_black.png' width=80%>";
-var bishop_black="<img src='images/bishop_black.png' width=80%>";
-var queen_black="<img src='images/queen_black.png' width=80%>";
-var king_black="<img src='images/king_black.png' width=80%>";
-var pawn_black="<img src='images/pawn_black.png' width=80%>";
-var pawn_white="<img src='images/pawn_white.png' width=80%>";
 
+var alternate_move='n';
+var checkFlag=true;
+
+// var rook_black="<img src='images/rook_black.png' width=80%>";
+// var knight_black="<img src='images/knight_black.png' width=80%>";
+// var bishop_black="<img src='images/bishop_black.png' width=80%>";
+// var queen_black="<img src='images/queen_black.png' width=80%>";
+// var king_black="<img src='images/king_black.png' width=80%>";
+// var pawn_black="<img src='images/pawn_black.png' width=80%>";
+// var pawn_white="<img src='images/pawn_white.png' width=80%>";
+/*
  function Start_chess()
  {
  // alert("hiii");
@@ -42,155 +46,117 @@ function clear_chess()
   /*  pawn_black.style.visibility = 'hidden';
 
 	var rook_img = document.getElementById('rook_black');
-    rook_img.style.visibility = 'hidden';*/
+    rook_img.style.visibility = 'hidden';
 
  }
+ */
  
- 
- // var divId;
-function divClick(element)
+function entry(element)
  {
  
- //alert("hey");
+ //alert("checkkk");
+ 
  var clear= document.getElementsByTagName("div");
  for(z=0;z<clear.length;z++)
  {
  clear[z].setAttribute("style","border-color:black;");
  }
  
- 
- var color=element.firstChild.id.charAt(0);
- var type= element.firstChild.id.charAt(1);
- colorType=color;
- alert(color);
- alert(type);
- divId=element.id;
+ //alert("hey");
+ var pieceColor=element.firstChild.id.charAt(0);
+ var pieceType= element.firstChild.id.charAt(1);
+// alternate_move=pieceColor;
+ pieceColorType=pieceColor;
+ //alert(pieceColor);
+// alert(pieceType);
+divId=element.id;
 // alert(divId);
  
- elementId=element.firstChild.id;
-// alert(elementId);
+ pieceId=element.firstChild.id;
+// alert(pieceId);
+
+ if(checkFlag||alternate_move!=pieceColor)
+ { 	
+       alternate_move=pieceColor;
+	   checkFlag=false;
  
- if(type=="r")
+  
+ 
+ 
+ if(pieceType=="r")
  {
- rmove(divId);
+ rookMove(divId);
  }
 
- if(type=="k")
+ if(pieceType=="k")
  {
- kmove(divId);
+ kingMove(divId);
  }
- if(type=="b")
+ if(pieceType=="b")
  {
- bmove(divId);
+ bishopMove(divId);
  }
-  ///////////////////////////////
-  
- if(type=="q")
+if(pieceType=="h")
+{
+horsemove(divId);
+}
+
+//////////////
+  if(pieceType=="q")
  {
- qMove(element);
+ queenMove(element);
  }
  
-if(type=='p')
+ if(pieceType=='p')
    {
-		if(color =='w'){
+		if(pieceColor =='w'){
 			wpawnMove(element);
 			}
 	  else{
 		pawnMove(element)
 		}
     }
- //////////////////////
+ ////////////////////////
+
  
  }
+ else
+	alert("Wrong Move.... Opponents move");
+ }
+
+
  
 
-
-/* 
-function kmove(divId)
-{
-	alert("in king move function");
-	alert(divId);
-
-	var x=parseInt(divId.charAt(0));
-	var y=parseInt(divId.charAt(1));
-	//alert();
-
-	//var count=0;
-	i=x;
-
-
-	for(j=y+1;j<=8;j++)
-	{
-	   if(isEmpty(i,j))
-	   {
-	    document.getElementById(""+i+j).setAttribute("style","border-color:red;");
-	   }
-	   else
-	   break;
-	
-	
-	}
-
-	for(j=y-1;j>0;j--)
-	{
-	 if(isEmpty(i,j))
-	   {
-	    document.getElementById(""+i+j).setAttribute("style","border-color:red;");
-	   }
-	 else
-	   break;
-	
-    }
-	j=y;
-	for(i=x-1;i>=0;i--)
-	{
-	  	  if(isEmpty(i,j))
-	   {
-	    document.getElementById(""+i+j).setAttribute("style","border-color:red;");
-	   }
-	    else
-	   break;
-	
-	}
-	for(i=x+1;i<=7;i++)
-	{
-		 if(isEmpty(i,j))
-	   {
-	    document.getElementById(""+i+j).setAttribute("style","border-color:red;");
-	   }
-	    else
-	   break;
-	
-	}
-
-}  */
-
-
-function  bmove(divId,color)
+function  bishopMove(divId,color)
 {
     
-    alert("in bishop move function");
-	alert(divId);
+  //  alert("in bishop move function");
+	//var dId=divId;
+	//alert(divId);
 
 	var x=parseInt(divId.charAt(0));
 	var y=parseInt(divId.charAt(1));
 
-	i=x;
-    j=y;
+	divId_Index1=x;
+    divId_Index2=y;
 
-	for(i=x+1,j=y+1;j<=8 && i<=7;j++,i++)
+	for(divId_Index1=x+1,divId_Index2=y+1;divId_Index2<=8 && divId_Index1<=7;divId_Index2++,divId_Index1++)
 	{
-	   if(isEmpty(i,j))
+	   if(isEmpty(divId_Index1,divId_Index2))
 	   {
-	    document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+	//   alert("in isEmpty forloop1");
+	    document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+		document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
+		
+		
 	   }
 	   else 
 	   {
-	   alert("isfr");
-	   if(!isFriend(i,j))
+	  // alert("isfr");
+	   if(!isFriend(divId_Index1,divId_Index2))
 	   {
-	   document.getElementById(""+i+j).setAttribute("style","border-color:red;");
-	   document.getElementById(""+i+j).setAttribute("onclick","getId(this)");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 	   break;
 	   }
@@ -198,78 +164,80 @@ function  bmove(divId,color)
 	}
 	
 	
-	i=x;
-	j=y;
-	for(i=x-1,j=y-1;j>0 && i>0;j--,i--)
+	divId_Index1=x;
+	divId_Index2=y;
+	for(divId_Index1=x-1,divId_Index2=y-1;divId_Index2>0 && divId_Index1>=0;divId_Index2--,divId_Index1--)
 	{
-	   if(isEmpty(i,j))
+	   if(isEmpty(divId_Index1,divId_Index2))
 	   {
-	    document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+	   //alert("in isEmpty forloop2");
+	    document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+		document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
+		//document.getElementById(""+divId_Index1+divId_Index2).onclick("getId(this)");
+		
 	   }
-	     else 
+	  else 
 	   {
-	   alert("isfr");
-	   if(!isFriend(i,j))
+	 //  alert("isfr");
+	   if(!isFriend(divId_Index1,divId_Index2))
 	   {
-	   document.getElementById(""+i+j).setAttribute("style","border-color:red;");
-	   document.getElementById(""+i+j).setAttribute("onclick","getId(this)");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 	   break;
 	   }
 	
-	alert("check it "+i+" "+j);
+//	alert("check it "+divId_Index1+" "+divId_Index2);
 	}
 	
 	
-	i=x;
-	j=y;
+	divId_Index1=x;
+	divId_Index2=y;
 	
-	for(i=x-1,j=y+1;i>=0&&j<=8;j++,i--)
+	for(divId_Index1=x-1,divId_Index2=y+1;divId_Index1>=0&&divId_Index2<=8;divId_Index2++,divId_Index1--)
 	{
-	alert("for loop1")
 	
-	   if(isEmpty(i,j))
+	
+	   if(isEmpty(divId_Index1,divId_Index2))
 	   {
-	    document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+	//   alert("in isEmpty forloop1");
+	    document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+		document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
-	    else 
+	  else 
 	   {
-	   alert("isfr");
-	   if(!isFriend(i,j))
+	 //  alert("isfr");
+	   if(!isFriend(divId_Index1,divId_Index2))
 	   {
-	   document.getElementById(""+i+j).setAttribute("style","border-color:red;");
-	   document.getElementById(""+i+j).setAttribute("onclick","getId(this)");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 	   break;
 	   }
 	
 	
 	}
-		i=x;
-	j=y;
-	for(i=x+1,j=y-1;j>=1&& i<=7;j--,i++)
+		divId_Index1=x;
+	divId_Index2=y;
+	for(divId_Index1=x+1,divId_Index2=y-1;divId_Index2>=1&& divId_Index1<=7;divId_Index2--,divId_Index1++)
 	{
-	   if(isEmpty(i,j))
+	   if(isEmpty(divId_Index1,divId_Index2))
 	   {
-	    document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+	 //  alert("in isEmpty forloop1");
+	    document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+		document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 	   else 
 	   {
-	   alert("isfr");
-	   if(!isFriend(i,j))
+	//   alert("isfr");
+	   if(!isFriend(divId_Index1,divId_Index2))
 	   {
-	   document.getElementById(""+i+j).setAttribute("style","border-color:red;");
-	   document.getElementById(""+i+j).setAttribute("onclick","getId(this)");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 	   break;
 	   }
 	}
-	
-	
-	
-	
-	
-
 
 }
 

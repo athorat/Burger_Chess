@@ -4,7 +4,7 @@ function allowDrop(ev) {
 }
 
 function drag(ev) {
-	alert(this);
+//	alert(this);
     ev.dataTransfer.setData("Text", ev.target.id);
 }
 
@@ -17,10 +17,10 @@ function drop(ev) {
 
 
 
-function rmove(divId)
+function rookMove(divId)
 {
-alert("in king move function");
-alert(colorType);
+//alert("in king move function");
+//alert(pieceColorType);
 	//alert(divId);
 
 	var x=parseInt(divId.charAt(0));
@@ -28,22 +28,24 @@ alert(colorType);
 	//alert();
 
 	//var count=0;
-	i=x;
+	divId_Index1=x;
 
 
-	for(j=y+1;j<=8;j++)
+	for(divId_Index2=y+1;divId_Index2<=8;divId_Index2++)
 	{
-	alert(isEmpty(i,j));
-	   if(isEmpty(i,j))
+	//alert(isEmpty(divId_Index1,divId_Index2));
+	   if(isEmpty(divId_Index1,divId_Index2))
 	   {
-	    document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+	    document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 	    else 
 	   {
 	   
-	   if(!isFriend(i,j))
+	   if(!isFriend(divId_Index1,divId_Index2))
 	   {
-	   document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 	   break;
 	   }
@@ -51,55 +53,61 @@ alert(colorType);
 	
 	}
 
-	for(j=y-1;j>0;j--)
+	for(divId_Index2=y-1;divId_Index2>0;divId_Index2--)
 	{
-	 if(isEmpty(i,j))
+	 if(isEmpty(divId_Index1,divId_Index2))
 	   {
-	    document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+	    document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 	   else 
 	   {
 	  
-	   if(!isFriend(i,j))
+	   if(!isFriend(divId_Index1,divId_Index2))
 	   {
-	   document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 	   break;
 	   }
 	
     }
-	j=y;
-	for(i=x-1;i>=0;i--)
+	divId_Index2=y;
+	for(divId_Index1=x-1;divId_Index1>=0;divId_Index1--)
 	{
-	  	  if(isEmpty(i,j))
+	  	  if(isEmpty(divId_Index1,divId_Index2))
 	   {
-	    document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+	    document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 	   else 
 	   {
 	   
-	   if(!isFriend(i,j))
+	   if(!isFriend(divId_Index1,divId_Index2))
 	   {
-	   document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 	   break;
 	   }
 	
 	
 	}
-	for(i=x+1;i<=7;i++)
+	for(divId_Index1=x+1;divId_Index1<=7;divId_Index1++)
 	{
-		 if(isEmpty(i,j))
+		 if(isEmpty(divId_Index1,divId_Index2))
 	   {
-	    document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+	    document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 
 	   else 
 	   {
 	   
-	   if(!isFriend(i,j))
+	   if(!isFriend(divId_Index1,divId_Index2))
 	   {
-	   document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 	   }
 	   break;
 	   }
@@ -116,7 +124,7 @@ alert(colorType);
 function isEmpty(i,j)
 {
 
-alert("in empty");
+//alert("in empty");
 var newId=""+i+j;
 var emptiness=document.getElementById(newId).getElementsByTagName("img")[0];
 if(emptiness)
@@ -139,7 +147,7 @@ function isFriend(i,j)
 {
 
 
-if(colorType==document.getElementById(""+i+j).firstChild.id.charAt(0))
+if(pieceColorType==document.getElementById(""+i+j).firstChild.id.charAt(0))
 {
 return true;
 }
@@ -153,46 +161,50 @@ return	false;
 
 function horsemove(divId)
 {
-               alert(colorType);
+  //             alert(pieceColorType);
                var x=parseInt(divId.charAt(0));
                var y=parseInt(divId.charAt(1));
 			   
-			   var i=x+2;
-			   var j=y-1;
+			   var divId_Index1=x+2;
+			   var divId_Index2=y-1;
 			   
-	   if(i<=7)
+	   if(divId_Index1<=7)
 	   {
-               if(j>=1)
+               if(divId_Index2>=1)
 			   {
-						 if(isEmpty(i,j))
+						 if(isEmpty(divId_Index1,divId_Index2))
                      	   {
-							document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+							document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	                       document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 							}
 
 							else 
 								
 	   
-									if(!isFriend(i,j))
+									if(!isFriend(divId_Index1,divId_Index2))
 									{
-										document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+										document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	                                    document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 									}
 									
 								
 			   }	
-			   j=y+1;
-			   if(j<=8)
+			   divId_Index2=y+1;
+			   if(divId_Index2<=8)
 			   {
-			   if(isEmpty(i,j))
+			   if(isEmpty(divId_Index1,divId_Index2))
                      	   {
-							document.getElementById(""+i+j).setAttribute("style","border-color:red;");
-							}
+							document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
+	   }
 
 							else 
 								
 	   
-									if(!isFriend(i,j))
+									if(!isFriend(divId_Index1,divId_Index2))
 									{
-										document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+										document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 									}
 									
 								
@@ -200,43 +212,45 @@ function horsemove(divId)
 			   }
 			   
 		}
-			   i=x-2;
-			   j=y-1;
-			   if(i>=0)
+			   divId_Index1=x-2;
+			   divId_Index2=y-1;
+			   if(divId_Index1>=0)
 			   {
-			   alert("seconn");
-			   if(j>=1)
+	//		   alert("seconn");
+			   if(divId_Index2>=1)
 			   {
-					if(isEmpty(i,j))
+					if(isEmpty(divId_Index1,divId_Index2))
                      	   {
-							document.getElementById(""+i+j).setAttribute("style","border-color:red;");
-							}
+							document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	                         document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
+						   }
 
 							else 
 								
 	   
-									if(!isFriend(i,j))
+									if(!isFriend(divId_Index1,divId_Index2))
 									{
-										document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+										document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	                                    document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 									}
 									
-								
-			   
 			   }
-			   j=y+1;
-			   if(j<=8)
+			   divId_Index2=y+1;
+			   if(divId_Index2<=8)
 			   {
-			   if(isEmpty(i,j))
+			   if(isEmpty(divId_Index1,divId_Index2))
                      	   {
-							document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+							document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 							}
 
 							else 
 								
 	   
-									if(!isFriend(i,j))
+									if(!isFriend(divId_Index1,divId_Index2))
 									{
-										document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+										document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 									}
 						
 			   }
@@ -246,43 +260,47 @@ function horsemove(divId)
 			   
 			   
 			   
-			    i=x-1;
-			   j=y-2;
-			   if(j>=1)
+			    divId_Index1=x-1;
+			   divId_Index2=y-2;
+			   if(divId_Index2>=1)
 			   {
-			   alert("seconn");
-			   if(i>=0)
+		//	   alert("seconn");
+			   if(divId_Index1>=0)
 			   {
-					if(isEmpty(i,j))
+					if(isEmpty(divId_Index1,divId_Index2))
                      	   {
-							document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+							document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 							}
 
 							else 
 								
 	   
-									if(!isFriend(i,j))
+									if(!isFriend(divId_Index1,divId_Index2))
 									{
-										document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+										document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 									}
 									
 								
 			   
 			   }
-			   i=x+1;
-			   if(i<=7)
+			   divId_Index1=x+1;
+			   if(divId_Index1<=7)
 			   {
-			   if(isEmpty(i,j))
+			   if(isEmpty(divId_Index1,divId_Index2))
                      	   {
-							document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+							document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 							}
 
 							else 
 								
 	   
-									if(!isFriend(i,j))
+									if(!isFriend(divId_Index1,divId_Index2))
 									{
-										document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+										document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 									}
 						
 			   }
@@ -290,43 +308,47 @@ function horsemove(divId)
 			         
 			   }
 			   
-			   i=x-1;
-			   j=y+2;
-			   if(j<=8)
+			   divId_Index1=x-1;
+			   divId_Index2=y+2;
+			   if(divId_Index2<=8)
 			   {
-			   alert("seconn");
-			   if(i>=0)
+			//   alert("seconn");
+			   if(divId_Index1>=0)
 			   {
-					if(isEmpty(i,j))
+					if(isEmpty(divId_Index1,divId_Index2))
                      	   {
-							document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+							document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 							}
 
 							else 
 								
 	   
-									if(!isFriend(i,j))
+									if(!isFriend(divId_Index1,divId_Index2))
 									{
-										document.getElementById(""+i+j).setAttribute("style","border-color:red;");
+										document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 									}
 									
 								
 			   
 			   }
-			   i=x+1;
-			   if(i<=7)
+			   divId_Index1=x+1;
+			   if(divId_Index1<=7)
 			   {
-			   if(isEmpty(i,j))
+			   if(isEmpty(divId_Index1,divId_Index2))
                      	   {
-							document.getElementById(""+i+j).setAttribute("style","background-color:red;");
+							document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 							}
 
 							else 
 								
 	   
-									if(!isFriend(i,j))
+									if(!isFriend(divId_Index1,divId_Index2))
 									{
-										document.getElementById(""+i+j).setAttribute("style","background-color:red;");
+										document.getElementById(""+divId_Index1+divId_Index2).setAttribute("style","border-color:red;");
+	   document.getElementById(""+divId_Index1+divId_Index2).setAttribute("onclick","getId(this)");
 									}
 						
 			   }
