@@ -1,78 +1,184 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Burger chess by athorat</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+ <html>
+<head>
+<title>Chess Board Game</title>
+<link rel="stylesheet" type="text/css" href="chess.css">
+ <script src="chess-script/drag.js"> 
+</script>
+<script src="chess-script/chess_script.js">
+</script>
+<script src="chess-script/move_element.js">
+</script>
+<script src="chess-script/king_move.js">
+</script>
+<script src="chess-script/chessJsByAbhi.js" >
+</script>
 
-  </head>
-  <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/athorat/Burger_Chess">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/athorat/Burger_Chess/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/athorat/Burger_Chess/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
 
-    <div class="wrapper">
 
-      <section>
-        <div id="title">
-          <h1>Burger chess</h1>
-          <p></p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/athorat">athorat</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
-  </body>
+</head>
+<body>
+<!--<button type="button" id="start_btn" onclick="Start_chess()">Start</button>
+<button type="button" id="start_btn" onclick="clear_chess()">clear</button> -->
+<div>
+<div id="chessboard">    <div>
+	    <div class="empty_square" id="100"></div>
+		<div class="empty_square" id="101"></div>
+	    <div class="empty_square" id="102"></div>
+		<div class="empty_square" id="103"></div>
+		<div class="empty_square" id="104"></div>
+		<div class="empty_square" id="105"></div>
+		<div class="empty_square" id="106"></div>
+		<div class="empty_square" id="107"></div>
+		<div class="empty_square" id="108"></div>
+		<div class="empty_square" id="109"></div>
+		
+	</div>
+	
+	
+	
+	<div>
+	    <div class="empty_square" id="110"></div>
+		<div class="empty_square" id="111"></div>
+	    <div class="empty_square" id="112"></div>
+		<div class="empty_square" id="113"></div>
+		<div class="empty_square" id="114"></div>
+		<div class="empty_square" id="115"></div>
+		<div class="empty_square" id="116"></div>
+		<div class="empty_square" id="117"></div>
+		<div class="empty_square" id="118"></div>
+		<div class="empty_square" id="119"></div>
+	</div>
+	<div>
+	    <div class="empty_square" id="120"></div>
+		<div class="black_square" id="01"  onclick="entry(this)"><img src="images\rook_black.png" id="br1" name="b" width=80%/>
+		</div>
+	    <div class="white_square" id="02" align="center" onclick="entry(this)"><img src="images\knight_black.png" width=80% id="bh1" name="b"/>
+		</div>
+		<div class="black_square" id="03" align="center" onclick="entry(this)"><img src="images\bishop_black.png" id="bb1" name="b" width=80%>
+		</div>
+		<div class="white_square" id="04" align="center" onclick="entry(this)"><img src="images\queen_black.png" id="bq" name="b" width=80%>
+		</div>
+		<div class="black_square" id="05" align="center" onclick="entry(this)"><img src="images\king_black.png" id="bk" name="b" width=80%>
+		</div>
+		<div class="white_square" id="06" align="center" onclick="entry(this)"><img src="images\bishop_black.png" id="bb2" name="b" width=80%>
+		</div>
+		<div class="black_square" id="07" align="center" onclick="entry(this)"><img src="images\knight_black.png" id="bh2" name="b" width=80%>
+		</div>
+		<div class="white_square" id="08" align="center" onclick="entry(this)"><img src="images\rook_black.png" id="br2" name="b" width=80%/>
+		</div>
+		<div class="empty_square" id="121"  align="center">
+		</div>
+	</div>
+	<div>
+		<div class="empty_square" id="122"></div>
+		<div class="white_square" id="11" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp1" name="w"></div>
+		<div class="black_square" id="12"align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp2" name="w"></div>
+		<div class="white_square" id="13"align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp3" name="w"></div>
+		<div class="black_square" id="14" align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp4" name="w"></div>
+		<div class="white_square" id="15" align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp6" name="w"></div>
+		<div class="black_square" id="16" align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp7" name="w"></div>
+		<div class="white_square" id="17" align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp8" name="w"></div>
+		<div class="black_square" id="18" align="center" onclick="entry(this)"><img src="images\pawn_black.png" width=80% id="bp8" name="w"></div>
+		<div class="empty_square" id="123" align="center"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="124"></div>
+		<div class="black_square" id="21" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div class="white_square" id="22"></div>
+		<div class="black_square" id="23"></div>
+		<div class="white_square" id="24"></div>
+		<div class="black_square" id="25"></div>
+		<div class="white_square" id="26"></div>
+		<div class="black_square" id="27" onclick="entry(this)"></div>
+		<div class="white_square" id="28"></div>
+		<div class="empty_square" id="125"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="126"></div>
+		<div class="white_square" id="31"></div>
+		<div class="black_square" id="32" onclick="entry(this)"></div>
+		<div class="white_square" id="33"  onclick="entry(this)"></div>
+		<div class="black_square" id="34"></div>
+		<div class="white_square" id="35" onclick="entry(this)"></div>
+		<div class="black_square" id="36"></div>
+		<div class="white_square" id="37" onclick="entry(this)"></div>
+		<div class="black_square" id="38"></div>
+		<div class="empty_square" id="127"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="128"></div>
+		<div class="black_square" id="41"></div>
+		<div class="white_square" id="42"></div>
+		<div class="black_square" id="43"></div>  
+		<div class="white_square" id="44"></div>
+		<div class="black_square" id="45"></div>
+		<div class="white_square" id="46" onclick="entry(this)"></div>
+		<div class="black_square" id="47"></div>
+		<div class="white_square" id="48"></div>
+		<div class="empty_square" id="129"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="130"></div>
+		<div class="white_square" id="51"></div>
+		<div class="black_square" id="52"></div>
+		<div class="white_square" id="53"></div>
+		<div class="black_square" id="54"></div>
+		<div class="white_square" id="55"></div>
+		<div class="black_square" id="56"></div>
+		<div class="white_square" id="57"></div>
+		<div class="black_square" id="58"></div>
+		<div class="empty_square" id="131"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="132"></div>
+		<div class="black_square" id="61" onclick="entry(this)"><img src="images\pawn_white.png" width=80% id="wp1"></div>
+		<div class="white_square" id="62" align="center" onclick="entry(this)"><img src="images\pawn_white.png" width=80% id="wp2" name="w"></div>
+		<div class="black_square" id="63" align="center" onclick="entry(this)"><img src="images\pawn_white.png" width=80% id="wp3" name="w"></div>
+		<div class="white_square" id="64" align="center" onclick="entry(this)"><img src="images\pawn_white.png" width=80% id="wp4" name="w"></div>
+		<div class="black_square" id="65" align="center" onclick="entry(this)"><img src="images\pawn_white.png" name="w" width=80% id="wp5"></div>
+		<div class="white_square" id="66" align="center" onclick="entry(this)"><img src="images\pawn_white.png" name="w" width=80% id="wp6"></div>
+		<div class="black_square" id="67" align="center" onclick="entry(this)"><img src="images\pawn_white.png" width=80% id="wp7" name="w"></div>
+		<div class="white_square" id="68" align="center" onclick="entry(this)"><img src="images\pawn_white.png" width=80% id="wp8" name="w"></div>
+		<div class="empty_square" id="132" align="center"></div>
+	</div>
+	<div>
+		<div class="empty_square" id="133"></div>
+		<div class="white_square" id="71" onclick="entry(this)"><img src="images\rook_white.png" width=80% id="wr1" name="w"></div>
+		<div class="black_square" id="72" align="center" onclick="entry(this)"><img src="images\knight_white.png" width=80% id="wh1" name="w"></div>
+		<div class="white_square" id="73" align="center" onclick="entry(this)"><img src="images\bishop_white.png" width=80% id="wb1" name="w"></div>
+		<div class="black_square" id="74"  align="center" onclick="entry(this)"><img src="images\queen_white.png" width=80% id="wq" name="w"></div>
+		<div class="white_square" id="75" align="center" onclick="entry(this)"><img src="images\king_white.png" width=80% id="wk" name="w"></div>
+		<div class="black_square" id="76" align="center" onclick="entry(this)"><img src="images\bishop_white.png" width=80% id="wb2" name="w"></div>
+		<div class="white_square" id="77" align="center" onclick="entry(this)"><img src="images\knight_white.png" width=80% id="wh2" name="w"></div>
+		<div class="black_square" id="78" align="center" onclick="entry(this)"><img src="images\rook_white.png" width=80% id="wr2" name="w"></div>
+		<div class="empty_square" id="134" align="center"></div>
+		
+	</div>
+		 <div>
+	    <div class="empty_square" id="135" ></div>
+		<div class="empty_square" id="136"></div>
+	    <div class="empty_square" id="137"></div>
+		<div class="empty_square" id="138"></div>
+		<div class="empty_square" id="139"></div>
+		<div class="empty_square" id="140"></div>
+		<div class="empty_square" id="141"></div>
+		<div class="empty_square" id="142"></div>
+		<div class="empty_square" id="143"></div>
+		<div class="empty_square" id="144"></div>
+	</div>
+	<div>
+	   <div class="empty_square" id="145"></div>
+		<div class="empty_square" id="146"></div>
+	    <div class="empty_square" id="147"></div>
+		<div class="empty_square" id="148"></div>
+		<div class="empty_square" id="149"></div>
+		<div class="empty_square" id="150"></div>
+		<div class="empty_square" id="151"></div>
+		<div class="empty_square" id="152"></div>
+		<div class="empty_square" id="153"></div>
+		<div class="empty_square" id="154"></div>
+	</div>
+</div>
+<div style="width:520px; height:50px; border:4px solid #000000; background-color:#CCF5FF;" id="chessBox">  
+</body>
 </html>
